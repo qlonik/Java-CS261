@@ -1,4 +1,6 @@
 
+import java.text.NumberFormat;
+
 /**
  * @author qlonik
  *
@@ -10,7 +12,7 @@ public class FestivalActivity implements Comparable<FestivalActivity> {
     private String name, description;
     private char category;
     private double admissionFee;
-
+    
     public FestivalActivity() {
         name = "";
         description = "";
@@ -66,6 +68,12 @@ public class FestivalActivity implements Comparable<FestivalActivity> {
 
     @Override
     public String toString() {
-        return super.toString();
+        String result = "";
+        NumberFormat fmt = NumberFormat.getCurrencyInstance();
+        
+        result += "Event: " + name + " (" + description + ") - " + category
+                + "; admission: " + fmt.format(admissionFee);
+        
+        return result;
     }
 }
