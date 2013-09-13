@@ -1,0 +1,112 @@
+0  PEI_Fall_Flavours_Festivals 0  X
+The Fall Flavours Festival is a month long culinary celebration highlighting authentic Island tastes and traditions in communities across Prince Edward Island. 
+September VariousLocations PEI
+
+01 Applelicious  25 C
+Event features Islands first apple cider competition and other apple delights.
+Sept13 NorthCapeCoastal Arlington_Orchards 
+ 
+2  PEI_Open_Farm_Day 0.0 A
+Meetlocal farmers;learn how PEI farms are operated to delivering top quality products.
+Sept15 IslandWide Call_626_7856   
+
+
+03 International_Shellfish_Festival 15 S
+Feast on oysters, mussels, clams, lobster, and chowder. Enjoy culinary demos with celebrity chefs.
+Sept15 Charlottetown  FestivalGrounds
+
+
+ 4 Wine_Lovers_paradise 29 A
+Get a peek behind the curtain at a PEI award winning winery.
+Sept25 PointsEastCoastal Olde_Glasgow_Mill
+
+
+5 Dining_on_RiverClyde  70 R
+Night of wining and dining with appetizers, entrees and desserts classically prepared.
+Sept19 GreenGablesShore   Olde_Glasgow_Mill  
+
+
+6 Brewmasters_Dinner 55 C 
+Learn the process of making beer,visit a brewery,taste a menu inspired by handcrafted brew.
+Sept19 Charlottetown GahanHouse 
+
+
+7 Beef_N'Blues 50 S
+Savour 12 Atlantic Signature Beef culinary creations prepared by celebrity chef Mark McEwan served up with groovy blues music.
+Sept20 NorthCapeCoastal   Summerside
+
+
+8 Deep_Sea_Fishing&BBQ  55 A
+Fishing adventure featuring seal watching, fishing and hauling lobster traps, crab traps, and mussel socks. 
+Sept20 PointsEastCoastal Georgetown
+
+
+9  Kegs_Corks&Oysters 35 C
+Celebration of beer, wine and PEI Malpeque oysters. Entertainment with Irish Mythen.
+Sept21 NorthCapeCoastal Summerside
+
+
+10 Clammin_N'Jammin 30 C
+An Acadian culinary food tasting experience featruing clams, mussels and oysters. Signature drink: Clamarita with Island shine.
+Sept21 NorthCapeCoastal   AbramVillage
+
+
+11 Brewmasters_Dinner 55 c 
+Learn the process of making beer,visit a brewery,taste a menu inspired by handcrafted brew.
+Sept21 Charlottetown GahanHouse 
+
+12 PEI_Culinary_Kitchen_Party 60 C
+Experience the best of PEI's gardens, farms and sea. This evening of music celebrates 100 years of Women's Institute on PEI
+Sept22 GreenGablesShore   NewLondon
+
+13 Wine_Lovers_paradise 29 A
+Get a peek behind the curtain at a PEI award winning winery.
+Sept25 PointsEastCoastal Olde_Glasgow_Mill
+
+14 Dining_on_RiverClyde  70 R
+Night of wining and dining with appetizers, entrees and desserts classically prepared.
+Sept27 GreenGablesShore   Olde_Glasgow_Mill  
+
+
+
+15 Oysters101  28 A
+Come in and learn all about Malpeque oysters with our professional oyster shuckers. 
+Sept26 GreenGablesShore  CarrsOysterBar
+
+
+16 Toe_Taps&Taters  50 S  
+Celebrity chef Lynn Crawfors showcases some truly unique creations inspired by PEI's most famous food.
+Sept27 NorthCapeCoastal Potato_Museum_OLeary
+
+
+17 Fortune_Feast 149 C
+Multi-course extravaganza featuring Chef Emeritus Michael Smith, showcasing Rossingol Estate wines.   
+Sept29 PointsEastCoastal Inn_Bay_Fortune
+
+17 Chef_on_Board  85 s
+Take to the waves with Northumberland Ferries and Chef Corbin Tomaszeski on this magical three hour starlit cruise.
+Sept28 PointsEastCoastal NorthhumberlandFerries
+
+18 Bernardin_Pickling&Canning_Demo 0 A
+Executive Chef Emerie Brine demonsrtates the simplicities of making the perfect pickles.
+Sept28 Charlottetown  Culinary_Institute 
+
+13 Two_Scoops_of_History 13 A
+Entertaining tour of 1867 Wyatt Historic House. Relax with home-made ice cream topped with Island fruit and a glass of fhubard punch.
+Sept25 NorthCapeCoastal Summerside
+
+
+14 Wine_Lovers_paradise 29 A
+Get a peek behind the curtain at a PEI award winning winery.
+Sept25 PointsEastCoastal Olde_Glasgow_Mill
+
+
+8 All_You_Need_Cheese&Wine  25 c
+Discover new tastes when pairing wine and cheese and find your perfect match for a dinner party.
+Sept21 Charlottetown  Culinary_Institute 
+
+1 International_Shellfish_Festival 15 S
+Feast on oysters, mussels, clams, lobster, and chowder. Enjoy culinary demos with celebrity chefs.
+Sept12 Charlottetown  FestivalGrounds
+
+
