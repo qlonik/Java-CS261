@@ -10,6 +10,7 @@ public class FallEvent extends FestivalActivity
     private String date, region, location;
 
     public FallEvent() {
+        super();
         eventNum = 0;
         date = "";
         region = "";
@@ -17,6 +18,19 @@ public class FallEvent extends FestivalActivity
     }
 
     public FallEvent(int eventNum, String date, String region, String location) {
+        this.eventNum = eventNum;
+        this.date = date;
+        this.region = region;
+        this.location = location;
+    }
+
+    public FallEvent(String name, String description, char category, double admissionFee) {
+        super(name, description, category, admissionFee);
+    }
+
+    public FallEvent(int eventNum, String date, String region, String location,
+            String name, String description, char category, double admissionFee) {
+        super(name, description, category, admissionFee);
         this.eventNum = eventNum;
         this.date = date;
         this.region = region;
@@ -38,12 +52,32 @@ public class FallEvent extends FestivalActivity
     public String getLocation() {
         return location;
     }
-    
+
+    public void setEventNum(int eventNum) {
+        this.eventNum = eventNum;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean result = false;
+
+        if (this.getClass() == obj.getClass()) {
+            FallEvent fe = (FallEvent) obj;
+            if (super.equals(fe)
+                    && eventNum == fe.getEventNum()
+                    && date.equals(fe.getDate())
+                    && region.equals(fe.getRegion())
+                    && location.equals(fe.getLocation())) {
+                result = true;
+            }
+        }
+
+        return result;
+    }
+
     @Override
     public int compareTo(FestivalActivity fa) {
         FallEvent fe = (FallEvent) fa;
         return Integer.compare(eventNum, fe.getEventNum());
     }
-    
-    
 }
