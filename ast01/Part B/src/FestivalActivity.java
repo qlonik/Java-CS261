@@ -52,7 +52,7 @@ public class FestivalActivity implements Comparable<FestivalActivity> {
     public boolean equals(Object obj) {
         boolean result = false;
 
-        if (obj.getClass() == new FestivalActivity().getClass()) {
+        if (this.getClass() == obj.getClass()) {
             FestivalActivity fa = (FestivalActivity) obj;
 
             if (name.equals(fa.getName())
