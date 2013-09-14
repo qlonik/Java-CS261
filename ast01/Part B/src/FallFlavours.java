@@ -77,4 +77,19 @@ public class FallFlavours {
 
     return result;
   }
+  
+  public String listAllEvents() {
+    return this.toString();
+  }
+
+  @Override
+  public String toString() {
+    String result = "";
+    
+    for (int i = 0; i < vault.size(); i++) {
+      result += vault.get(i) + "\n\n";
+    }
+    
+    return result;
+  }
 }
