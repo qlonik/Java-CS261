@@ -102,6 +102,9 @@ public class FallEvent extends FestivalActivity
             case 'S':
                 categoryString = "Signature Event";
                 break;
+            default:
+                categoryString = "NOT ASSIGNED";
+                break;
         }
 
         result += "Event #" + eventNum + " - " + super.getName()
