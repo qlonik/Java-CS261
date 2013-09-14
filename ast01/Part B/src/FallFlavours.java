@@ -36,7 +36,14 @@ public class FallFlavours {
                 FallEvent element = new FallEvent(eventNumI, thirdLine[0],
                         thirdLine[1], thirdLine[2], firstLine[1],
                         secondLine, categoryC, feeD);
-                vault.add(vault.size(), element);
+
+                try {
+                    if (vault.get(eventNumI) != null) {
+                        vault.remove(eventNumI);
+                    }
+                } catch (ListIndexOutOfBoundsException ex) {
+                }
+                vault.add(eventNumI, element);
             }
         }
     }
