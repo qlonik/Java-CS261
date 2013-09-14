@@ -1,4 +1,6 @@
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author qlonik
@@ -79,5 +81,33 @@ public class FallEvent extends FestivalActivity
     public int compareTo(FestivalActivity fa) {
         FallEvent fe = (FallEvent) fa;
         return Integer.compare(eventNum, fe.getEventNum());
+    }
+
+    @Override
+    public String toString() {
+        String categoryString = "";
+        NumberFormat fmt = NumberFormat.getCurrencyInstance();
+        String result = "";
+
+        switch (super.getCategory()) {
+            case 'A':
+                categoryString = "Culinary Adventure";
+                break;
+            case 'C':
+                categoryString = "Culinary Event";
+                break;
+            case 'R':
+                categoryString = "Restaurant Dining";
+                break;
+            case 'S':
+                categoryString = "Signature Event";
+                break;
+        }
+
+        result += "Event #" + eventNum + " - " + super.getName()
+                + " - " + categoryString + "\n" + super.getDescription()
+                + "\nFee: " + fmt.format(super.getAdmissionFee())
+                + " @ " + location + ", " + region + " (" + date + ")";
+        return result;
     }
 }
