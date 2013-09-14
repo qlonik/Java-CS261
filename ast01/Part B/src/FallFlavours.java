@@ -47,4 +47,34 @@ public class FallFlavours {
             }
         }
     }
+
+    public String search(String toFindString) {
+        String result = "";
+        toFindString = toFindString.toLowerCase();
+
+        for (int i = 0; i < vault.size(); i++) {
+            FallEvent fe = (FallEvent) vault.get(i);
+            String description = fe.getDescription().toLowerCase();
+            if (description.indexOf(toFindString) != -1) {
+                result += fe + "\n\n";
+            }
+        }
+
+        return result;
+    }
+
+    public String search(Character toFindCharacter) {
+        String result = "";
+        toFindCharacter = Character.toUpperCase(toFindCharacter);
+
+        for (int i = 0; i < vault.size(); i++) {
+            FallEvent fe = (FallEvent) vault.get(i);
+            char category = fe.getCategory();
+            if (category == toFindCharacter) {
+                result += fe + "\n\n";
+            }
+        }
+
+        return result;
+    }
 }
