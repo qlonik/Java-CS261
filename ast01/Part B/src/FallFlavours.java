@@ -77,19 +77,46 @@ public class FallFlavours {
 
     return result;
   }
-  
+
   public String listAllEvents() {
     return this.toString();
+  }
+
+  public boolean addEvent(FallEvent fe) {
+    boolean result = false;
+
+    try {
+      int eventNumI = fe.getEventNum();
+      deleteEvent(eventNumI);
+      vault.add(eventNumI, fe);
+      result = true;
+    } catch (ListIndexOutOfBoundsException ex) {
+    } catch (ListException ex) {
+    }
+
+    return result;
+  }
+
+  public boolean deleteEvent(int eventNumI) {
+    boolean result = false;
+
+    try {
+      vault.remove(eventNumI);
+      result = true;
+    } catch (ListIndexOutOfBoundsException ex) {
+    }
+
+    return result;
   }
 
   @Override
   public String toString() {
     String result = "";
-    
+
     for (int i = 0; i < vault.size(); i++) {
       result += vault.get(i) + "\n\n";
     }
-    
+
     return result;
   }
 }
