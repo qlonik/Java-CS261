@@ -71,8 +71,8 @@ public class FestivalActivity implements Comparable<FestivalActivity> {
         String result = "";
         NumberFormat fmt = NumberFormat.getCurrencyInstance();
         
-        result += "Event: " + name + " (" + description + ") - " + category
-                + "; admission: " + fmt.format(admissionFee);
+        result += "Event: " + name + "; Category: " + category + "; Fee: "
+                + fmt.format(admissionFee) + "\n" + description;
         
         return result;
     }
