@@ -80,9 +80,9 @@ public class FallFlavoursTester {
   public static void main(String[] args) {
     FallFlavours ff = new FallFlavours("fallEvents.txt");
     FallFlavoursTester fft = new FallFlavoursTester(ff);
-
-    String userInput = "";
+    String userInput;
     Scanner kb = new Scanner(System.in);
+
     System.out.print("Enter command (q for quit, h for help): ");
     userInput = kb.nextLine();
 
