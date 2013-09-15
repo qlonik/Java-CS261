@@ -11,10 +11,10 @@ public class FallFlavours {
 
   private ListArrayBased vault;
 
-  public FallFlavours() {
+  public FallFlavours(String filePath) {
     Scanner file = null;
     try {
-      file = new Scanner(new File("fallEvents.txt"));
+      file = new Scanner(new File(filePath));
     } catch (FileNotFoundException ex) {
       System.out.println("File not found. Place it near class files");
       System.err.println("File is missing");
