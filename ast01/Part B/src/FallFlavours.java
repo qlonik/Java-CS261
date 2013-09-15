@@ -78,8 +78,14 @@ public class FallFlavours {
     return result;
   }
 
-  public String listAllEvents() {
-    return this.toString();
+  public FallEvent[] listAllEvents() {
+    FallEvent[] result = new FallEvent[vault.size()];
+
+    for (int i = 0; i < vault.size(); i++) {
+      result[i] = (FallEvent) vault.get(i);
+    }
+
+    return result;
   }
 
   public boolean addEvent(FallEvent fe) {
