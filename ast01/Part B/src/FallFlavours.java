@@ -3,14 +3,24 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-/**
- *
- * @author qlonik
+/*
+ * Student: Nikita Volodin    id: 127196
+ * Assignment #1 - Part B     CS261
+ * 
+ * Class models all FallEvents in program
  */
 public class FallFlavours {
 
   private ListArrayBased vault;
 
+  /**
+   * Constructor for FallFlavours object.
+   *
+   * @param filePath Path to file with all FallEvents
+   */
+  /*
+   * Constructor creates vault object and stores there all FallEvents from file
+   */
   public FallFlavours(String filePath) {
     Scanner file = null;
     try {
@@ -48,6 +58,12 @@ public class FallFlavours {
     }
   }
 
+  /**
+   * Search FallEvents by description
+   *
+   * @param toFindString String to search
+   * @return String representation of all matching FallEvents
+   */
   public String search(String toFindString) {
     String result = "";
     toFindString = toFindString.toLowerCase();
@@ -63,6 +79,12 @@ public class FallFlavours {
     return result;
   }
 
+  /**
+   * Search FallEvents by category
+   *
+   * @param toFindCharacter Character to find
+   * @return String representation of all matching FallEvents
+   */
   public String search(Character toFindCharacter) {
     String result = "";
     toFindCharacter = Character.toUpperCase(toFindCharacter);
@@ -78,6 +100,11 @@ public class FallFlavours {
     return result;
   }
 
+  /**
+   * Method lists all Events
+   *
+   * @return Array representation of all FallEvents
+   */
   public FallEvent[] listAllEvents() {
     FallEvent[] result = new FallEvent[vault.size()];
 
@@ -88,6 +115,12 @@ public class FallFlavours {
     return result;
   }
 
+  /**
+   * Adds new Event into vault
+   *
+   * @param fe FallEvent that is being added
+   * @return TRUE if addition was successful
+   */
   public boolean addEvent(FallEvent fe) {
     boolean result = false;
 
@@ -103,6 +136,12 @@ public class FallFlavours {
     return result;
   }
 
+  /**
+   * Deletes Event from vault
+   *
+   * @param eventNumI Number of event to delete
+   * @return TRUE if deletion was successful
+   */
   public boolean deleteEvent(int eventNumI) {
     boolean result = false;
 
@@ -115,6 +154,11 @@ public class FallFlavours {
     return result;
   }
 
+  /**
+   * String representation of all FallFlavours
+   * 
+   * @return String of all FallFlavours
+   */
   @Override
   public String toString() {
     String result = "";
