@@ -7,12 +7,12 @@ import java.util.Scanner;
  */
 public class FallFlavoursTester {
 
-  Scanner kb;
-  FallFlavours ff;
+  private Scanner kb;
+  private FallFlavours ff;
 
-  public FallFlavoursTester(FallFlavours ff) {
+  public FallFlavoursTester(String filePath) {
+    ff = new FallFlavours(filePath);
     kb = new Scanner(System.in);
-    this.ff = ff;
   }
 
   public void addItem() {
@@ -78,8 +78,7 @@ public class FallFlavoursTester {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    FallFlavours ff = new FallFlavours("fallEvents.txt");
-    FallFlavoursTester fft = new FallFlavoursTester(ff);
+    FallFlavoursTester fft = new FallFlavoursTester("fallEvents.txt");
     String userInput;
     Scanner kb = new Scanner(System.in);
 
