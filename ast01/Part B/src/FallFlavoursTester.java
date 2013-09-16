@@ -1,20 +1,30 @@
 
 import java.util.Scanner;
 
-/**
- *
- * @author qlonik
+/*
+ * Student: Nikita Volodin    id: 127196
+ * Assignment #1 - Part B     CS261
+ * 
+ * Class tests FallFlavours class
  */
 public class FallFlavoursTester {
 
   private Scanner kb;
   private FallFlavours ff;
 
+  /**
+   * Constructor for tester
+   * 
+   * @param filePath String path for file with FallEvents
+   */
   public FallFlavoursTester(String filePath) {
     ff = new FallFlavours(filePath);
     kb = new Scanner(System.in);
   }
 
+  /**
+   * Asks user to add new FallEvent into vault
+   */
   public void addItem() {
     System.out.print("Write name for event (use \"qzx\" to quit add manager): ");
     String name = kb.nextLine();
@@ -44,6 +54,9 @@ public class FallFlavoursTester {
     }
   }
 
+  /**
+   * Asks user to delete FallEvent from vault
+   */
   public void deleteItem() {
     int eventNum = 0;
     boolean done = false;
@@ -67,6 +80,9 @@ public class FallFlavoursTester {
     }
   }
 
+  /**
+   * Shows help for user
+   */
   public void showHelp() {
     System.out.println("Use \"a\" to start new element manager");
     System.out.println("Use \"d\" to start deletion manager");
