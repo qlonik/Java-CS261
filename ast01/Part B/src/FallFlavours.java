@@ -27,7 +27,6 @@ public class FallFlavours {
       file = new Scanner(new File(filePath));
     } catch (FileNotFoundException ex) {
       System.out.println("File not found. Place it near class files");
-      System.err.println("File is missing");
     }
 
     vault = new ListArrayBased();
@@ -47,13 +46,15 @@ public class FallFlavours {
                 thirdLine[1], thirdLine[2], firstLine[1],
                 secondLine, categoryC, feeD);
 
-        try {
-          if (vault.get(eventNumI) != null) {
-            vault.remove(eventNumI);
+        if (!exist(element.getName(), element.getDate())) {
+          try {
+            if (vault.get(eventNumI) != null) {
+              vault.remove(eventNumI);
+            }
+          } catch (ListIndexOutOfBoundsException ex) {
           }
-        } catch (ListIndexOutOfBoundsException ex) {
+          vault.add(eventNumI, element);
         }
-        vault.add(eventNumI, element);
       }
     }
   }
@@ -101,15 +102,24 @@ public class FallFlavours {
   }
 
   /**
-   * Method lists all Events
+   * Returns schedule for events
    *
-   * @return Array representation of all FallEvents
+   * @return String representation of schedule
    */
-  public FallEvent[] listAllEvents() {
-    FallEvent[] result = new FallEvent[vault.size()];
+  public String listAllEvents() {
+    return toString();
+  }
 
-    for (int i = 0; i < vault.size(); i++) {
-      result[i] = (FallEvent) vault.get(i);
+  public boolean exist(String name, String date) {
+    boolean result = false;
+
+    int i = 0;
+    while (i < vault.size() && !result) {
+      FallEvent fe = (FallEvent) vault.get(i);
+      if (fe.getName().equals(name) && fe.getDate().equals(date)) {
+        result = true;
+      }
+      i++;
     }
 
     return result;
