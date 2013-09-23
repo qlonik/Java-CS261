@@ -16,9 +16,9 @@ Feast on oysters, mussels, clams, lobster, and chowder. Enjoy culinary demos wit
 Sept15 Charlottetown  FestivalGrounds
 
 
- 4 Wine_Lovers_paradise 29 A
+ 4 Wine_Lovers_Paradise 29 A
 Get a peek behind the curtain at a PEI award winning winery.
-Sept25 PointsEastCoastal Olde_Glasgow_Mill
+Sept15 PointsEastCoastal Olde_Glasgow_Mill
 
 
 5 Dining_on_RiverClyde  70 R
@@ -59,7 +59,7 @@ Sept21 Charlottetown GahanHouse
 Experience the best of PEI's gardens, farms and sea. This evening of music celebrates 100 years of Women's Institute on PEI
 Sept22 GreenGablesShore   NewLondon
 
-13 Wine_Lovers_paradise 29 A
+13 Wine_Lovers_Paradise 29 A
 Get a peek behind the curtain at a PEI award winning winery.
 Sept25 PointsEastCoastal Olde_Glasgow_Mill
 
@@ -96,7 +96,7 @@ Entertaining tour of 1867 Wyatt Historic House. Relax with home-made ice cream t
 Sept25 NorthCapeCoastal Summerside
 
 
-14 Wine_Lovers_paradise 29 A
+14 Wine_Lovers_Paradise 29 A
 Get a peek behind the curtain at a PEI award winning winery.
 Sept25 PointsEastCoastal Olde_Glasgow_Mill
 
