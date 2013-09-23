@@ -125,7 +125,7 @@ public class FallFlavoursTester {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    FallFlavoursTester fft = new FallFlavoursTester("fallEvents_new.txt");
+    FallFlavoursTester fft = new FallFlavoursTester("fallEvents.txt");
     String userInput;
     Scanner kb = new Scanner(System.in);
 
