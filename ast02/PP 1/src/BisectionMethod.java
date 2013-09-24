@@ -27,13 +27,12 @@ class BisectionMethod {
     return a * Math.pow(x, 3) + b * Math.pow(x, 2) + c * Math.pow(x, 1) + d;
   }
 
-  public void solve() {
-    double solution = recursiveSolve(lower, upper);
-    System.out.println(solution);
+  public double solve() {
+    return recursiveSolve(lower, upper);
   }
 
   private double recursiveSolve(double lower, double upper) {
-    double solution;
+    double solution = 0;
 
     if (Math.abs(upper - lower) < epsilon) {
       solution = (lower + upper) / 2;
@@ -41,7 +40,7 @@ class BisectionMethod {
       double mid = (upper + lower) / 2;
       if (Math.signum(func(mid)) == Math.signum(func(upper))) {
         solution = recursiveSolve(lower, mid);
-      } else {
+      } else if (Math.signum(func(mid)) == Math.signum(func(lower))) {
         solution = recursiveSolve(mid, upper);
       }
     }

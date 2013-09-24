@@ -48,7 +48,9 @@ public class BisectionMethodTester {
 
     try {
       BisectionMethod bm = new BisectionMethod(x1, x2, x3, x4, a, b, epsilon);
-      bm.solve();
+      double solution = bm.solve();
+      System.out.println("Solution for this equation on this interval is: "
+              + solution);
     } catch (IntervalException ex) {
       System.out.println(ex.getMessage());
     }
