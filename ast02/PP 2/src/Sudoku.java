@@ -36,7 +36,36 @@ public class Sudoku {
   public void solve() {
   }
 
-  private void recursiveSolve() {
+  private boolean recursiveSolve(int a) {
+    boolean result = false;
+
+    if (a < MAX_NUM * MAX_NUM) { //if we are outside sudoku grid
+      int x = a % 9;
+      int y = a / 9;
+      while (!matchingTable[y][x]) { //skip all unchangeable values
+        a++;
+        x = a % 9;
+        y = a / 9;
+      }
+      //get all possible values in current cell
+      ArrayList<Integer> possibleValues = buildPossibleValues(x, y);
+      
+      for (int i = 0; i < possibleValues.size() && !result; i++) {
+        if (matchingTable[y][x]) {
+          puzzle[y][x] = possibleValues.get(i);
+        }
+        if (checkSolution()) {
+          result = true;
+        } else {
+          result = recursiveSolve(a + 1);
+          if (!result && matchingTable[y][x]) {
+            puzzle[y][x] = 0;
+          }
+        }
+      }
+    }
+
+    return result;
   }
 
   private ArrayList<Integer> buildPossibleValues(int x, int y) {
