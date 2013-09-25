@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+
 /**
  *
  * @author qlonik
@@ -35,6 +37,18 @@ public class Sudoku {
   }
 
   private void recursiveSolve() {
+  }
+
+  private ArrayList<Integer> buildPossibleValues(int x, int y) {
+    ArrayList<Integer> result = new ArrayList<>();
+
+    for (int i = 1; i <= 9; i++) {
+      if (validDigit(i, x, y)) {
+        result.add(i);
+      }
+    }
+
+    return result;
   }
 
   private boolean checkSolution() {
