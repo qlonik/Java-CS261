@@ -34,6 +34,7 @@ public class Sudoku {
   }
 
   public void solve() {
+    recursiveSolve(0);
   }
 
   private boolean recursiveSolve(int a) {
