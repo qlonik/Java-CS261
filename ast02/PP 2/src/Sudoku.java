@@ -38,6 +38,17 @@ public class Sudoku {
   }
 
   private boolean checkSolution() {
+    boolean result = true;
+
+    for (int i = 0; i < MAX_NUM && result; i++) {
+      for (int j = 0; j < MAX_NUM && result; j++) {
+        if (!validDigit(puzzle[i][j], j, i)) {
+          result = false;
+        }
+      }
+    }
+
+    return result;
   }
 
   private boolean validDigit(int number, int x, int y) {
