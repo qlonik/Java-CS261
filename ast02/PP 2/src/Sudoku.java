@@ -50,7 +50,7 @@ public class Sudoku {
       }
       //get all possible values in current cell
       ArrayList<Integer> possibleValues = buildPossibleValues(x, y);
-      
+
       for (int i = 0; i < possibleValues.size() && !result; i++) {
         if (matchingTable[y][x]) {
           puzzle[y][x] = possibleValues.get(i);
@@ -117,6 +117,18 @@ public class Sudoku {
       }
     }
 
+    return result;
+  }
+
+  @Override
+  public String toString() {
+    String result = "";
+    for (int i = 0; i < MAX_NUM; i++) {
+      for (int j = 0; j < MAX_NUM; j++) {
+        result += puzzle[i][j] + " ";
+      }
+      result += "\n";
+    }
     return result;
   }
 }
