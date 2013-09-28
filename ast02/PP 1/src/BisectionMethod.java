@@ -1,4 +1,11 @@
 
+/*
+ * Student: Nikita Volodin    id: 127196
+ * Student: Mitchell Corish   id: 124557
+ * Assignment #2 - Part A     CS261
+ * 
+ * Class finds the midpoint of a given function
+ */
 class BisectionMethod {
 
   double a, b, c, d, lower, upper, epsilon;
@@ -19,18 +26,37 @@ class BisectionMethod {
               + "\nLower bound is higher than upper");
     }
     if (Math.signum(func(lower)) == Math.signum(func(upper))) {
-      throw new IntervalException("func(lower bound) and func(upper bound) have the same sign");
+      throw new IntervalException("func(lower bound) and func(upper bound) "
+              + "have the same sign");
     }
   }
 
+  /**
+   * private method that returns a value of function
+   *
+   * @param x value given
+   * @return the value of trinomial equation
+   */
   private double func(double x) {
     return a * Math.pow(x, 3) + b * Math.pow(x, 2) + c * Math.pow(x, 1) + d;
   }
 
+  /**
+   * Starts the method to solve the bisection method
+   *
+   * @return the solution for equation using bisection method
+   */
   public double solve() {
     return recursiveSolve(lower, upper);
   }
 
+  /**
+   * Uses recursion to find the midpoint in the function
+   *
+   * @param lower lower limit in equation
+   * @param upper upper limit on equation
+   * @return midpoint of interval
+   */
   private double recursiveSolve(double lower, double upper) {
     double solution = 0;
 

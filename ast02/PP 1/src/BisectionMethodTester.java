@@ -1,6 +1,13 @@
 
 import java.util.Scanner;
 
+/*
+ * Student: Nikita Volodin    id: 127196
+ * Student: Mitchell Corish   id: 124557
+ * Assignment #2 - Part A     CS261
+ * 
+ * Class tests BisectionMethod class
+ */
 public class BisectionMethodTester {
 
   /**
