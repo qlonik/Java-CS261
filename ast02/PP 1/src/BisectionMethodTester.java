@@ -45,14 +45,6 @@ public class BisectionMethodTester {
     Double epsilon = kb.nextDouble();
     System.out.println();
 
-//    double x1 = 5;
-//    double x2 = -2;
-//    double x3 = 0;
-//    double x4 = 3;
-//    double a = -1;
-//    double b = 1;
-//    double epsilon = 0.0001;
-
     try {
       BisectionMethod bm = new BisectionMethod(x1, x2, x3, x4, a, b, epsilon);
       double solution = bm.solve();
