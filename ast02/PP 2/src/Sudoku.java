@@ -165,6 +165,14 @@ public class Sudoku {
     for (int i = 0; i < MAX_NUM; i++) {
       for (int j = 0; j < MAX_NUM; j++) {
         result += puzzle[i][j] + " ";
+        
+        if (j % 3 == 2) {
+          result += "| ";
+        }
+      }
+      
+      if (i % 3 == 2) {
+        result += "\n-----------------------";
       }
       result += "\n";
     }
