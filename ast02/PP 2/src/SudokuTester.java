@@ -1,4 +1,6 @@
 
+import java.util.Scanner;
+
 /*
  * Student: Nikita Volodin    id: 127196
  * Student: Mitchell Corish   id: 124557
@@ -45,8 +47,43 @@ public class SudokuTester {
       {0, 9, 0, 0, 0, 0, 4, 0, 0}
     };
 
-    Sudoku sudoku = new Sudoku(sudokuFromPDF);
-    sudoku.solve();
-    System.out.println(sudoku);
+
+    Scanner kb = new Scanner(System.in);
+    int[][] currentSudoku = null;
+    String userInput;
+    Sudoku sudoku;
+
+    System.out.println("Choose which sudoku you want to solve.");
+    System.out.println("'p' is for sudoku from PDF file");
+    System.out.println("'b' is for sudoku from book");
+    System.out.println("'i' is for sudoku from internet");
+    System.out.print(">>> ");
+
+    userInput = kb.nextLine();
+    switch (userInput) {
+      case "p":
+      case "P":
+        currentSudoku = sudokuFromPDF;
+        break;
+      case "b":
+      case "B":
+        currentSudoku = sudokuFromBook;
+        break;
+      case "i":
+      case "I":
+        currentSudoku = sudokuFromInternet;
+        break;
+      default:
+        System.out.println("Wrong input. Exiting...");
+        break;
+    }
+
+    if (currentSudoku != null) {
+      sudoku = new Sudoku(currentSudoku);
+      System.out.println();
+      System.out.println("Given: \n" + sudoku);
+      sudoku.solve();
+      System.out.println("Solved: \n" + sudoku);
+    }
   }
 }
