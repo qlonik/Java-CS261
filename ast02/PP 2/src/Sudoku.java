@@ -15,13 +15,6 @@ public class Sudoku {
   private int MAX_NUM = 9;
 
   /**
-   * Creates an empty 2 dimensional array for sudoku
-   */
-  public Sudoku() {
-    puzzle = new int[9][9];
-  }
-
-  /**
    * Creates an array of given user data
    *
    * @param puzzle given 2 dimensional array with sudoku
