@@ -1,4 +1,11 @@
 
+/*
+ * Student: Nikita Volodin    id: 127196
+ * Student: Mitchell Corish   id: 124557
+ * Assignment #2 - Part B     CS261
+ * 
+ * Class tests Sudoku class
+ */
 public class SudokuTester {
 
   public static void main(String[] args) {
@@ -37,7 +44,7 @@ public class SudokuTester {
       {0, 0, 8, 5, 0, 0, 0, 1, 0},
       {0, 9, 0, 0, 0, 0, 4, 0, 0}
     };
-    
+
     Sudoku sudoku = new Sudoku(sudokuFromPDF);
     sudoku.solve();
     System.out.println(sudoku);

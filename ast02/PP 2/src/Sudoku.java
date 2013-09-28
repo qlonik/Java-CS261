@@ -1,9 +1,12 @@
 
 import java.util.ArrayList;
 
-/**
- *
- * @author qlonik
+/*
+ * Student: Nikita Volodin    id: 127196
+ * Student: Mitchell Corish   id: 124557
+ * Assignment #2 - Part B     CS261
+ * 
+ * Class solves a given sudoku using brute force method
  */
 public class Sudoku {
 
@@ -11,16 +14,27 @@ public class Sudoku {
   private boolean[][] matchingTable;
   private int MAX_NUM = 9;
 
+  /**
+   * Creates an empty 2 dimensional array for sudoku
+   */
   public Sudoku() {
     puzzle = new int[9][9];
   }
 
+  /**
+   * Creates an array of given user data
+   *
+   * @param puzzle given 2 dimensional array with sudoku
+   */
   public Sudoku(int[][] puzzle) {
     this.puzzle = puzzle;
     matchingTable = new boolean[MAX_NUM][MAX_NUM];
     buildMatchArray();
   }
 
+  /**
+   * Builds matching array with true values in cells that can be changed
+   */
   private void buildMatchArray() {
     for (int i = 0; i < MAX_NUM; i++) {
       for (int j = 0; j < MAX_NUM; j++) {
@@ -33,14 +47,23 @@ public class Sudoku {
     }
   }
 
+  /**
+   * public method to initiate the recusiveSolve method
+   */
   public void solve() {
     recursiveSolve(0);
   }
 
+  /**
+   * recursiveSolve uses recursion to solve the given Sudoku
+   *
+   * @param a number of cell to start from
+   * @return TRUE if sudoku is solved
+   */
   private boolean recursiveSolve(int a) {
     boolean result = false;
 
-    if (a < MAX_NUM * MAX_NUM) { //if we are outside sudoku grid
+    if (a < MAX_NUM * MAX_NUM) { //if we are inside sudoku grid
       int x = a % 9;
       int y = a / 9;
       while (!matchingTable[y][x]) { //skip all unchangeable values
@@ -50,7 +73,7 @@ public class Sudoku {
       }
       //get all possible values in current cell
       ArrayList<Integer> possibleValues = buildPossibleValues(x, y);
-
+      //try all possible values
       for (int i = 0; i < possibleValues.size() && !result; i++) {
         if (matchingTable[y][x]) {
           puzzle[y][x] = possibleValues.get(i);
@@ -69,6 +92,13 @@ public class Sudoku {
     return result;
   }
 
+  /**
+   * Creates an ArrayList with all possible values in given spot
+   *
+   * @param x specified column
+   * @param y specified row
+   * @return possible values for cell
+   */
   private ArrayList<Integer> buildPossibleValues(int x, int y) {
     ArrayList<Integer> result = new ArrayList<>();
 
@@ -81,6 +111,11 @@ public class Sudoku {
     return result;
   }
 
+  /**
+   * checks solution to see if it is correct
+   *
+   * @return TRUE - if sudoku puzzle solved correctly
+   */
   private boolean checkSolution() {
     boolean result = true;
 
@@ -95,6 +130,14 @@ public class Sudoku {
     return result;
   }
 
+  /**
+   * Checks number to see if it is a valid digit to put into cell
+   *
+   * @param number given from the sudoku at a certain position
+   * @param x specified column
+   * @param y specified row
+   * @return TRUE - if we can put number in given cell
+   */
   private boolean validDigit(int number, int x, int y) {
     boolean result = true;
 
@@ -120,6 +163,11 @@ public class Sudoku {
     return result;
   }
 
+  /**
+   * Prints puzzle
+   *
+   * @return String representation of sudoku
+   */
   @Override
   public String toString() {
     String result = "";
