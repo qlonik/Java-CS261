@@ -75,14 +75,12 @@ public class Sudoku {
       ArrayList<Integer> possibleValues = buildPossibleValues(x, y);
       //try all possible values
       for (int i = 0; i < possibleValues.size() && !result; i++) {
-        if (matchingTable[y][x]) {
-          puzzle[y][x] = possibleValues.get(i);
-        }
+        puzzle[y][x] = possibleValues.get(i);
         if (checkSolution()) {
           result = true;
         } else {
           result = recursiveSolve(a + 1);
-          if (!result && matchingTable[y][x]) {
+          if (!result) {
             puzzle[y][x] = 0;
           }
         }
