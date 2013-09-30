@@ -60,16 +60,13 @@ public class SudokuTester {
     System.out.print(">>> ");
 
     userInput = kb.nextLine();
-    switch (userInput) {
-      case "p":
+    switch (userInput.toUpperCase()) {
       case "P":
         currentSudoku = sudokuFromPDF;
         break;
-      case "b":
       case "B":
         currentSudoku = sudokuFromBook;
         break;
-      case "i":
       case "I":
         currentSudoku = sudokuFromInternet;
         break;
