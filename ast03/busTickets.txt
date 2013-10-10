@@ -1,0 +1,45 @@
+Liu   Yue   30
+MacAulay   Nathan  29
+Stewart   Ryan  12
+Martin   Andrew  0
+Ortenburger   Art  0 
+Crowther   Colin  21
+Leblanc David 1 Chair of CS Department
+Tingley   Jon   31
+Uzun   Maxim  17
+Cutcliffe Wayne 0   Faculty
+Watts Devin 4
+
+Wuertz   Jason  8
+Zhang   JunQin  0
+Clow   Cory  35
+Gaudette   Austin  25
+Hainer   Tyler  15
+Corish   Mitchell  39
+Whynacht   Matthew 7
+Gallant   Ryan  0
+Howard Stephen 5  Faculty
+Champion Matthew 3
+Hanna   David  30
+ 
+Wheeler   Todd  13
+Desbiens   Fernand  2  CSIT Society Executive
+White   Matthew  14
+Hughes   Luke  22
+Lee   Hyejin  33
+Li   Chaozhi  34
+Banks  Richard  6
+Macintosh   David  9
+MacRae   Gordon  0
+Cudmore   Jonathan  24
+Stewart   Brandon  16
+
+Dunn   Daniel  32
+Stewart Matt 27
+Sencabaugh   Tom  28
+MacKay   Mike  37
+Volodin   Nikita  19
+Weber   Corey   20
+MacInnis   Jason  10
+Banks   Brandon  18 
+Chen   Xingtong  11
