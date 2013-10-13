@@ -8,33 +8,45 @@ import collection.exceptions.EmptyCollectionException;
  */
 public class Queue<T> implements QueueInterface<T> {
 
+  ListReferenceBased queue;
+
+  public Queue() {
+    queue = new ListReferenceBased();
+  }
+
   @Override
   public void enqueue(T element) {
-    throw new UnsupportedOperationException("Not supported yet.");
+    queue.add(queue.size(), element);
   }
 
   @Override
   public T dequeue() throws EmptyCollectionException {
-    throw new UnsupportedOperationException("Not supported yet.");
+    T element = peek();
+    queue.remove(0);
+    return element;
   }
 
   @Override
   public void dequeueAll() {
-    throw new UnsupportedOperationException("Not supported yet.");
+    queue.removeAll();
   }
 
   @Override
   public T peek() throws EmptyCollectionException {
-    throw new UnsupportedOperationException("Not supported yet.");
+    if (queue.isEmpty()) {
+      throw new EmptyCollectionException("Queue");
+    }
+
+    return (T) queue.get(0);
   }
 
   @Override
   public boolean isEmpty() {
-    throw new UnsupportedOperationException("Not supported yet.");
+    return queue.isEmpty();
   }
 
   @Override
   public int size() {
-    throw new UnsupportedOperationException("Not supported yet.");
+    return queue.size();
   }
 }
