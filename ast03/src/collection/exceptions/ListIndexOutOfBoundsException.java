@@ -1,8 +1,8 @@
-//package collection.exceptions;
+package collection.exceptions;
 
 public class ListIndexOutOfBoundsException
-            extends IndexOutOfBoundsException
-{
+        extends IndexOutOfBoundsException {
+
   public ListIndexOutOfBoundsException(String s) {
     super(s);
   }  // end constructor
