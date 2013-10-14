@@ -49,4 +49,16 @@ public class Queue<T> implements QueueInterface<T> {
   public int size() {
     return queue.size();
   }
+
+  @Override
+  public String toString() {
+    String result = "";
+
+    for (int i = 0; i < queue.size(); i++) {
+      result += "" + (T) queue.get(i) + "\n";
+    }
+
+    result = result.substring(0, result.lastIndexOf("\n"));
+    return result;
+  }
 }
