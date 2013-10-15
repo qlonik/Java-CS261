@@ -2,10 +2,7 @@ package ast03;
 
 import collection.*;
 import collection.exceptions.*;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
@@ -17,64 +14,70 @@ public class TicketReservations {
   private OrderedCollection<Ticket> collection;
   private Queue<Ticket> queue;
 
-  public TicketReservations(String filepathString) throws FileNotFoundException {
+  public TicketReservations() {
     collection = new OrderedCollection<>();
     queue = new Queue<>();
-    parseFile(filepathString);
-    boolean value = true;
   }
 
-  private void parseFile(String filepath) throws FileNotFoundException {
-    Scanner file = new Scanner(new File(filepath));
-
-    while (file.hasNext()) {
-      String readLine = file.nextLine().trim();
-      if (!readLine.equals("")) {
-        Scanner line = new Scanner(readLine);
-        line.useDelimiter(" +");
-        String lastName, firstName, membershipS, comment;
-        lastName = line.next();
-        firstName = line.next();
-        membershipS = line.next();
-        if (line.hasNext()) {
-          comment = line.nextLine().trim();
-        } else {
-          comment = "";
-        }
-        int membership = Integer.parseInt(membershipS);
-
-        Ticket newTicket = new Ticket(lastName, firstName, membership, comment);
-        if (collection.size() < BUS_CAPACITY && membership != 0) {
-          collection.add(newTicket);
-        } else {
-          queue.enqueue(newTicket);
-        }
-      }
-    }
-
-    updateQueue();
-  }
-
-  private void updateQueue() {
+  /**
+   * Method updates queue. It moves tickets from queue to reservation collection
+   * if there is space available
+   */
+  public void updateQueue() {
     while (collection.size() < BUS_CAPACITY) {
       collection.add(queue.dequeue());
     }
   }
 
-  public void addReservation(Ticket ticket) {
+  /**
+   * Method reserves new ticket into reservation list if possible and returns
+   * TRUE. If it is not possible to add into reservation list, method adds new
+   * ticket into queue and returns FALSE.
+   *
+   * @param ticket new ticket to reserve
+   * @return TRUE if reservation was added. FALSE if reservation was added into
+   * queue
+   */
+  public boolean addReservation(Ticket ticket) {
+    boolean result = true;
     if (collection.size() < BUS_CAPACITY) {
       collection.add(ticket);
     } else {
       queue.enqueue(ticket);
+      result = false;
     }
+    return result;
+  }
+  
+  /**
+   * Method adds ticket into queue
+   * @param ticket ticket that being added
+   */
+  public void addToQueue(Ticket ticket) {
+    queue.enqueue(ticket);
   }
 
+  /**
+   * Method removes reservation for a ticket from ordered collection and updates
+   * queue, so next ticket in queue get its place in ordered collection
+   *
+   * @param ticket ticket to be removed
+   * @throws EmptyCollectionException if collection is empty
+   * @throws ElementNotFoundException if element was not found in the ordered
+   * collection
+   */
   public void deleteReservation(Ticket ticket)
           throws EmptyCollectionException, ElementNotFoundException {
     collection.remove(ticket);
     updateQueue();
   }
 
+  /**
+   * Search in name (last + first) of the ticket reservation
+   *
+   * @param queryName exact or partial name to search for
+   * @return list of all tickets found
+   */
   public ArrayList<Ticket> query(String queryName) {
     ArrayList<Ticket> tickets = new ArrayList<>();
 
@@ -88,5 +91,13 @@ public class TicketReservations {
     }
 
     return tickets;
+  }
+
+  public String getReservationsList() {
+    return "" + collection;
+  }
+  
+  public String getQueueList() {
+    return "" + queue;
   }
 }
