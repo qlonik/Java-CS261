@@ -20,7 +20,7 @@ public class Ticket implements Comparable<Ticket> {
     return lastName + " " + firstName;
   }
 
-  public int getNumber() {
+  public int getMembership() {
     return membership;
   }
 
