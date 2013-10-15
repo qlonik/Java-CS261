@@ -1,6 +1,3 @@
-package collection;
-
-import collection.exceptions.EmptyCollectionException;
 
 /**
  *

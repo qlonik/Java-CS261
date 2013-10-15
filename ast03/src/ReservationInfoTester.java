@@ -1,8 +1,4 @@
-package ast03;
 
-import collection.Ticket;
-import collection.exceptions.ElementNotFoundException;
-import collection.exceptions.EmptyCollectionException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -270,7 +266,8 @@ public class ReservationInfoTester {
 
   /**
    * Method writes all updated reservations and current queue into file.
-   * @throws FileNotFoundException 
+   *
+   * @throws FileNotFoundException
    */
   public void writeToFile() throws FileNotFoundException {
     File outputFile = new File(OUTPUT_FILE_PATH);
@@ -284,7 +281,7 @@ public class ReservationInfoTester {
     pw.println();
     pw.println("Queue: ");
     pw.println(collection.getQueueList());
-    
+
     pw.close();
   }
 }

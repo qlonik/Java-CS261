@@ -1,4 +1,3 @@
-package collection.exceptions;
 
 //********************************************************************
 //  EmptyCollectionException.java               Authors: Lewis/Chase
@@ -10,7 +9,7 @@ public class EmptyCollectionException extends RuntimeException {
   /**
    * ****************************************************************
    * Sets up this exception with an appropriate message.
-  *****************************************************************
+   * ****************************************************************
    */
   public EmptyCollectionException(String collection) {
     super("The " + collection + " is empty.");

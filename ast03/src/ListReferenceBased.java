@@ -1,6 +1,3 @@
-package collection;
-
-import collection.exceptions.ListIndexOutOfBoundsException;
 
 // ****************************************************
 // Reference-based implementation of ADT list.

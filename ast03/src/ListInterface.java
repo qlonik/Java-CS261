@@ -1,7 +1,3 @@
-package collection;
-
-import collection.exceptions.ListException;
-import collection.exceptions.ListIndexOutOfBoundsException;
 
 // ********************************************************
 // Interface ListInterface for the ADT list.

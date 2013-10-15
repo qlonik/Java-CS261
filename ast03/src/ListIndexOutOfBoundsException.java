@@ -1,4 +1,3 @@
-package collection.exceptions;
 
 public class ListIndexOutOfBoundsException
         extends IndexOutOfBoundsException {

@@ -1,4 +1,3 @@
-package collection.exceptions;
 
 //**********************************************************************
 //  ElementNotAddedException.java     			Author: Wayne Cutcliffe

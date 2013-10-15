@@ -1,7 +1,4 @@
-package ast03;
 
-import collection.*;
-import collection.exceptions.*;
 import java.util.ArrayList;
 
 /**
@@ -48,9 +45,10 @@ public class TicketReservations {
     }
     return result;
   }
-  
+
   /**
    * Method adds ticket into queue
+   *
    * @param ticket ticket that being added
    */
   public void addToQueue(Ticket ticket) {
@@ -96,7 +94,7 @@ public class TicketReservations {
   public String getReservationsList() {
     return "" + collection;
   }
-  
+
   public String getQueueList() {
     return "" + queue;
   }
