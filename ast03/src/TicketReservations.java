@@ -1,9 +1,11 @@
 
 import java.util.ArrayList;
 
-/**
- *
- * @author qlonik
+/*
+ * TicketReservations.java    Author: Nikita Volodin (127196)
+ * CS261, Assignment 3
+ * 
+ * Class represents reserved and queued tickets
  */
 public class TicketReservations {
 
@@ -91,10 +93,18 @@ public class TicketReservations {
     return tickets;
   }
 
+  /**
+   *
+   * @return String representation of reservations
+   */
   public String getReservationsList() {
     return "" + collection;
   }
 
+  /**
+   *
+   * @return String representation of queue
+   */
   public String getQueueList() {
     return "" + queue;
   }

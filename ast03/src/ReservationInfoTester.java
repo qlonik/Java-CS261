@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 
-/**
- *
- * @author qlonik
+/*
+ * ReservationInfoTester.java       Author: Nikita Volodin (127196)
+ * CS261, Assignment 3
+ * 
+ * Class creates reservations object and tests it
  */
 public class ReservationInfoTester {
 
@@ -128,10 +130,16 @@ public class ReservationInfoTester {
             + "Type \"q\" to exit program.";
   }
 
+  /**
+   * Method prints all reservations
+   */
   public void showReservations() {
     System.out.println(collection.getReservationsList());
   }
 
+  /**
+   * Method prints queue
+   */
   public void showQueue() {
     System.out.println(collection.getQueueList());
   }
