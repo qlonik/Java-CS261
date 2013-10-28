@@ -1,0 +1,49 @@
+run #1 - 1 000 000 elements
+class sorting.QuickSort
+Mean of 50 runs: 
+	0.86584
+
+class sorting.MergeSort
+Mean of 50 runs: 
+	1.03144
+
+class sorting.MergeSortMod
+Mean of 50 runs: 
+	0.82284
+
+class sorting.MergeSortMod2
+Mean of 50 runs: 
+	0.80338
+
+class sorting.ShellSort
+Mean of 50 runs: 
+	2.67998
+
+class sorting.ShellSortKnuth
+Mean of 50 runs: 
+	2.30556
+
+run #2 - 50 000 elements
+class sorting.QuickSort
+Mean of 500 runs: 
+	0.020814
+
+class sorting.MergeSort
+Mean of 500 runs: 
+	0.028788
+
+class sorting.MergeSortMod
+Mean of 500 runs: 
+	0.023852
+
+class sorting.MergeSortMod2
+Mean of 500 runs: 
+	0.022652000000000002
+
+class sorting.ShellSort
+Mean of 500 runs: 
+	0.04436
+
+class sorting.ShellSortKnuth
+Mean of 500 runs: 
+	0.040838

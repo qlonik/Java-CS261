@@ -1,0 +1,23 @@
+class sorting.QuickSort
+Mean of 50 runs: 
+	0.3312
+
+class sorting.MergeSort
+Mean of 50 runs: 
+	0.3996
+
+class sorting.MergeSortMod
+Mean of 50 runs: 
+	0.43496
+
+class sorting.MergeSortMod2
+Mean of 50 runs: 
+	0.34832
+
+class sorting.ShellSort
+Mean of 50 runs: 
+	1.13386
+
+class sorting.ShellSortKnuth
+Mean of 50 runs: 
+	1.0485
