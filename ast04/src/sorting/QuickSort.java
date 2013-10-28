@@ -18,19 +18,23 @@ public class QuickSort<T extends Comparable<? super T>> implements SortAlgorithm
     counter[2] = endTime - startTime;
   }
 
-  public T percentileSearch(T[] dataArray, int size, int percentile) {
+  public T percentileSearch(T[] dataArray, int size, double percentile) {
     theArray = dataArray;
     counter = new Long[]{0L, 0L, 0L};
-    Integer position = percentile * size / 100;
+    Integer position = (int) (percentile * size / 100);
+    T result = null;
+
+    if (position == size) {
+      position--;
+    }
     System.gc();
     Long startTime = System.currentTimeMillis();
 
-    T item = quickSortForPercentile(0, size - 1, position);
+    result = quickSortForPercentile(0, size - 1, position);
 
     Long endTime = System.currentTimeMillis();
     counter[2] = endTime - startTime;
-
-    return item;
+    return result;
   }
 
   //  *********   Use recursion to partition and sort   *************
@@ -46,13 +50,25 @@ public class QuickSort<T extends Comparable<? super T>> implements SortAlgorithm
 
   private T quickSortForPercentile(int first, int last, int position) {
     int pivotIndex;
+    T result = null;
+
     if (first < last) // At least one item
     {
       pivotIndex = partition(first, last);  	// Create partitions
-      quickSort(first, pivotIndex - 1);       // Sort the left side
-      quickSort(pivotIndex + 1, last);       	// Sort the right side
+      if (pivotIndex == position) {
+        result = theArray[position];
+      } else if (pivotIndex - 1 == first && pivotIndex - 1 == position) {
+        result = theArray[pivotIndex - 1];
+      } else if (pivotIndex + 1 == last && pivotIndex + 1 == position) {
+        result = theArray[pivotIndex + 1];
+      } else if (first <= position && position < pivotIndex) {
+        result = quickSortForPercentile(first, pivotIndex - 1, position);       // Sort the left side 
+      } else if (pivotIndex < position && position <= last) {
+        result = quickSortForPercentile(pivotIndex + 1, last, position);       	// Sort the right side
+      }
     }
-    return null;
+
+    return result;
   }
 
   /**

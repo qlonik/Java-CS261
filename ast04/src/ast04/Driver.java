@@ -12,31 +12,77 @@ public class Driver {
    * @param args the command line arguments
    */
   public static void main(String[] args) {
-    double convertValue = 1000;
+    final double CONVERT_VALUE = 1000;
 
-    Integer[] testData = new Integer[100000];
+    Integer[] testDataOrig = new Integer[100000];
     int size = 0;
     try {
-      size = readDataFile(testData);
+      size = readDataFile(testDataOrig);
     } catch (Exception ex) {
     }
-
+    Integer[] testData;
+    Long[] counter;
+    double percentile;
 
 //    SortAlgorithm<Integer> sa = new InsertionSort<>();
 //    SortAlgorithm<Integer> sa = new MergeSort<>();
 //    SortAlgorithm<Integer> sa = new MergeSortMod<>();
-    SortAlgorithm<Integer> sa = new QuickSort<>();
+//    SortAlgorithm<Integer> sa = new QuickSort<>();
 //    SortAlgorithm<Integer> sa = new SelectionSort<>();
 //    SortAlgorithm<Integer> sa = new ShellSort<>();
 //    SortAlgorithm<Integer> sa = new ShellSortKnuth<>();
 
-    sa.sort(testData, size);
-    Long[] counter = sa.getCounter();
+//    sa.sort(testData, size);
+//    Long[] counter = sa.getCounter();
 
-    System.out.println("" + sa.getClass().toString() + "\n"
-            + "\tcomparisons:\t" + counter[0] + "\n"
-            + "\taccesses:\t" + counter[1] + "\n"
-            + "\ttime:\t\t" + (counter[2] / convertValue) + " s\n");
+//    System.out.println("" + sa.getClass().toString() + "\n"
+//            + "\tcomparisons:\t" + counter[0] + "\n"
+//            + "\taccesses:\t" + counter[1] + "\n"
+//            + "\ttime:\t\t" + (counter[2] / convertValue) + " s\n");
+
+    { //part A
+      testData = testDataOrig.clone();
+      ShellSortKnuth<Integer> shk = new ShellSortKnuth<>();
+
+      shk.sort(testData, size);
+
+      counter = shk.getCounter();
+      System.out.println("Part A:");
+      System.out.println("" + shk.getClass().toString() + "\n"
+              + "\tcomparisons:\t" + counter[0] + "\n"
+              + "\taccesses:\t" + counter[1] + "\n"
+              + "\ttime:\t\t" + (counter[2] / CONVERT_VALUE) + " s\n");
+    }
+    
+    { //part B
+      testData = testDataOrig.clone();
+      MergeSortMod2<Integer> msm2 = new MergeSortMod2<>();
+
+      msm2.sort(testData, size);
+
+      counter = msm2.getCounter();
+      System.out.println("Part B:");
+      System.out.println("" + msm2.getClass().toString() + "\n"
+              + "\tcomparisons:\t" + counter[0] + "\n"
+              + "\taccesses:\t" + counter[1] + "\n"
+              + "\ttime:\t\t" + (counter[2] / CONVERT_VALUE) + " s\n");
+    }
+
+    { //part C
+      testData = testDataOrig.clone();
+      percentile = 100;
+      QuickSort<Integer> qs = new QuickSort<>();
+
+      Integer item = qs.percentileSearch(testData, size, percentile);
+
+      counter = qs.getCounter();
+      System.out.println("Part C:");
+      System.out.println("" + percentile + "th percentile: " + item);
+      System.out.println("" + qs.getClass().toString() + "\n"
+              + "\tcomparisons:\t" + counter[0] + "\n"
+              + "\taccesses:\t" + counter[1] + "\n"
+              + "\ttime:\t\t" + (counter[2] / CONVERT_VALUE) + " s\n");
+    }
   }
 
   public static void print(Integer[] arr) {
