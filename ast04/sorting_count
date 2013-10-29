@@ -1,0 +1,39 @@
+class sorting.SelectionSort
+	comparisons:	1249975000
+	accesses:	149997
+	time:		14.214 s
+
+class sorting.InsertionSort
+	comparisons:	623886559
+	accesses:	623936571
+	time:		14.313 s
+
+class sorting.QuickSort
+	comparisons:	906058
+	accesses:	1588836
+	time:		0.056 s
+
+class sorting.MergeSort
+	comparisons:	718294
+	accesses:	1568928
+	time:		0.129 s
+
+class sorting.MergeSortMod
+	comparisons:	590048
+	accesses:	1200000
+	time:		0.123 s
+
+class sorting.MergeSortMod2
+	comparisons:	617665
+	accesses:	1300000
+	time:		0.12 s
+
+class sorting.ShellSort
+	comparisons:	1992367
+	accesses:	2017972
+	time:		0.089 s
+
+class sorting.ShellSortKnuth
+	comparisons:	1655022
+	accesses:	1677844
+	time:		0.097 s
