@@ -40,7 +40,7 @@ public class MergeSortMod2<T extends Comparable<? super T>> implements SortAlgor
 //      }
       
       if (last - first + 1 <= 20) {
-        ss.sortRange(theArray, first, mid);
+        ss.sortRange(theArray, first, last);
       } else {
         mergeSort(first, mid); 			// sort left half of list
         mergeSort(mid + 1, last); 		// sort right half of list
