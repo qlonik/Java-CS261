@@ -19,20 +19,19 @@ public class NewMain {
 
     long seed = 123L;
     int len = (int) 50000;
-    int iterations = 500;
+    int iterations = 1;
 
     Integer[] data = new Integer[len];
     Random rnd = new Random();
     ArrayList<SortAlgorithm<Integer>> sa = new ArrayList<>();
-//    SortAlgorithm<Integer> sa = new InsertionSort<>();
-//    SortAlgorithm<Integer> sa = new SelectionSort<>();
+    sa.add((SortAlgorithm<Integer>) new SelectionSort<>());
+    sa.add((SortAlgorithm<Integer>) new InsertionSort<>());
     sa.add((SortAlgorithm<Integer>) new QuickSort<>());
     sa.add((SortAlgorithm<Integer>) new MergeSort<>());
     sa.add((SortAlgorithm<Integer>) new MergeSortMod<>());
     sa.add((SortAlgorithm<Integer>) new MergeSortMod2<>());
     sa.add((SortAlgorithm<Integer>) new ShellSort<>());
     sa.add((SortAlgorithm<Integer>) new ShellSortKnuth<>());
-
 
     for (int k = 0; k < sa.size(); k++) {
 //    for (int k = 0; k < 1; k++) {
@@ -52,16 +51,20 @@ public class NewMain {
         type = "" + sorter.getClass();
 
 //      print(data);
-//      System.out.println("" + sa.getClass() + "\n"
-//              + "\tcomparisons:\t" + counter[0] + "\n"
-//              + "\taccesses:\t" + counter[1] + "\n"
-//              + "\ttime:\t\t" + (counter[2] / convertor) + " s\n");
+        if (iterations == 1) {
+          System.out.println("" + sorter.getClass() + "\n"
+                  + "\tcomparisons:\t" + counter[0] + "\n"
+                  + "\taccesses:\t" + counter[1] + "\n"
+                  + "\ttime:\t\t" + (counter[2] / convertor) + " s\n");
+        }
       }
 
-      System.out.println(type);
-      System.out.println("Mean of " + iterations + " runs: ");
-      System.out.println("\t" + (sum / convertor / iterations));
-      System.out.println();
+      if (iterations > 1) {
+        System.out.println(type);
+        System.out.println("Mean of " + iterations + " runs: ");
+        System.out.println("\t" + (sum / convertor / iterations));
+        System.out.println();
+      }
     }
   }
 

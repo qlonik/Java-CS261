@@ -22,7 +22,6 @@ public class Driver {
     }
     Integer[] testData;
     Long[] counter;
-    double percentile;
 
 //    SortAlgorithm<Integer> sa = new InsertionSort<>();
 //    SortAlgorithm<Integer> sa = new MergeSort<>();
@@ -53,7 +52,7 @@ public class Driver {
               + "\taccesses:\t" + counter[1] + "\n"
               + "\ttime:\t\t" + (counter[2] / CONVERT_VALUE) + " s\n");
     }
-    
+
     { //part B
       testData = testDataOrig.clone();
       MergeSortMod2<Integer> msm2 = new MergeSortMod2<>();
@@ -69,19 +68,21 @@ public class Driver {
     }
 
     { //part C
-      testData = testDataOrig.clone();
-      percentile = 100;
-      QuickSort<Integer> qs = new QuickSort<>();
+      double[] percentiles = {0, 50, 80, 90, 100};
+      for (int i = 0; i < percentiles.length; i++) {
+        testData = testDataOrig.clone();
+        QuickSort<Integer> qs = new QuickSort<>();
 
-      Integer item = qs.percentileSearch(testData, size, percentile);
+        Integer item = qs.percentileSearch(testData, size, percentiles[i]);
 
-      counter = qs.getCounter();
-      System.out.println("Part C:");
-      System.out.println("" + percentile + "th percentile: " + item);
-      System.out.println("" + qs.getClass().toString() + "\n"
-              + "\tcomparisons:\t" + counter[0] + "\n"
-              + "\taccesses:\t" + counter[1] + "\n"
-              + "\ttime:\t\t" + (counter[2] / CONVERT_VALUE) + " s\n");
+        counter = qs.getCounter();
+        System.out.println("Part C:");
+        System.out.println("" + percentiles[i] + "th percentile: " + item);
+        System.out.println("" + qs.getClass().toString() + "\n"
+                + "\tcomparisons:\t" + counter[0] + "\n"
+                + "\taccesses:\t" + counter[1] + "\n"
+                + "\ttime:\t\t" + (counter[2] / CONVERT_VALUE) + " s\n");
+      }
     }
   }
 
