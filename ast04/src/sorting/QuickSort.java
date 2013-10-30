@@ -24,7 +24,7 @@ public class QuickSort<T extends Comparable<? super T>> implements SortAlgorithm
     Integer position = (int) (percentile * size / 100);
     T result = null;
 
-    if (position == size) {
+    if (position > 0) {
       position--;
     }
     System.gc();
