@@ -76,9 +76,5 @@ public class PartC {
     counter = qs.getCounter();
     System.out.println("" + percentile + "th\t: " + item
             + " .. time: " + (counter[2] / CONVERT_VALUE) + " s\n");
-//    System.out.println("" + qs.getClass().toString() + "\n"
-//            + "\tcomparisons:\t" + counter[0] + "\n"
-//            + "\taccesses:\t" + counter[1] + "\n"
-//            + "\ttime:\t\t" + (counter[2] / CONVERT_VALUE) + " s\n");
   }
 }

@@ -38,13 +38,6 @@ public class MergeSortMod<T extends Comparable<? super T>> implements SortAlgori
       } else {
         mergeSort(mid + 1, last); 		// sort right half of list
       }
-      
-//      if (last - first + 1 <= 20) {
-//        ss.sortRange(theArray, first, mid);
-//      } else {
-//        mergeSort(first, mid); 			// sort left half of list
-//        mergeSort(mid + 1, last); 		// sort right half of list
-//      }
 
       merge(first, mid, last);			// merge the sorted sublists
     }
