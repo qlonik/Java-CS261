@@ -32,7 +32,6 @@ public class TestSortings {
     sa.add((SortAlgorithm<Integer>) new QuickSort<>());
     sa.add((SortAlgorithm<Integer>) new MergeSort<>());
     sa.add((SortAlgorithm<Integer>) new MergeSortMod<>());
-    sa.add((SortAlgorithm<Integer>) new MergeSortMod2<>());
     sa.add((SortAlgorithm<Integer>) new ShellSort<>());
     sa.add((SortAlgorithm<Integer>) new ShellSortKnuth<>());
 

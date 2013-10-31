@@ -47,13 +47,13 @@ public class PartAB {
 
     { //part B
       testData = testDataOrig.clone();
-      MergeSortMod2<Integer> msm2 = new MergeSortMod2<>();
+      MergeSortMod<Integer> msm = new MergeSortMod<>();
 
-      msm2.sort(testData, size);
+      msm.sort(testData, size);
 
-      counter = msm2.getCounter();
+      counter = msm.getCounter();
       System.out.println("Part B:");
-      System.out.println("" + msm2.getClass().toString());
+      System.out.println("" + msm.getClass().toString());
       print(testData);
       System.out.println("\tcomparisons:\t" + counter[0] + "\n"
               + "\taccesses:\t" + counter[1] + "\n"
