@@ -1,13 +1,17 @@
 package sorting;
 
-public class MergeSortMod2<T extends Comparable<? super T>> implements SortAlgorithm<T> {
+/*
+ * Modification of Merge Sort. It uses Selection Sort for array length less
+ * than 20 
+ */
+public class MergeSortMod<T extends Comparable<? super T>> implements SortAlgorithm<T> {
 
   //****   Sorts the specified array of objects using the merge sort algorithm.
   protected T[] theArray;
   private Long[] counter;
   SelectionSort<T> ss;
 
-  public MergeSortMod2() {
+  public MergeSortMod() {
     this.ss = new SelectionSort<>();
   }
 
@@ -23,6 +27,12 @@ public class MergeSortMod2<T extends Comparable<? super T>> implements SortAlgor
     counter[2] = endTime - startTime;
   }  // method sort
 
+  /**
+   * Recursive call of merge sort
+   *
+   * @param first start range for merge sort
+   * @param last end range for merge sort
+   */
   private void mergeSort(int first, int last) {
     if (first < last) // at least two elements.
     {
@@ -38,9 +48,12 @@ public class MergeSortMod2<T extends Comparable<? super T>> implements SortAlgor
 //      } else {
 //        mergeSort(mid + 1, last); 		// sort right half of list
 //      }
-      
+
       if (last - first + 1 <= 20) {
         ss.sortRange(theArray, first, last);
+        Long[] ssCounter = ss.getCounter();
+        counter[0] += ssCounter[0];
+        counter[1] += ssCounter[1];
       } else {
         mergeSort(first, mid); 			// sort left half of list
         mergeSort(mid + 1, last); 		// sort right half of list
