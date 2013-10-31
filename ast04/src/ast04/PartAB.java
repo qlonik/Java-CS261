@@ -6,6 +6,13 @@ import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 
+/*
+ * PartAB.java    Nikita Volodin
+ * CS261,         Assignment 4
+ * 
+ * Class answers parts A and B of assignment. It sorts array using modified
+ * Shell Sort and modified Merge Sort
+ */
 public class PartAB {
 
   /**

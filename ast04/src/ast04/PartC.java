@@ -3,9 +3,12 @@ package ast04;
 import java.util.Scanner;
 import sorting.QuickSort;
 
-/**
- *
- * @author qlonik
+/*
+ * PartC.java     Nikita Volodin (127196)
+ * CS261,         Assignment 4
+ * 
+ * This class solves part C of assignment. It finds nth element in an
+ * ordered list
  */
 public class PartC {
 

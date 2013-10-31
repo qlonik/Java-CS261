@@ -3,9 +3,12 @@ package ast04;
 import java.util.ArrayList;
 import sorting.*;
 
-/**
- *
- * @author qlonik
+/*
+ * TestSortings.java      Nikita Volodin (127196)
+ * CS261,                 Assignment 4
+ * 
+ * Class tests all sorting algorithms, and prints name, comparisons, 
+ * accesses and running time of algorithm
  */
 public class TestSortings {
 
