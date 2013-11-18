@@ -32,14 +32,14 @@ class TreeNode<T> {
     String result = "";
     String spaces = "";
     for (int i = 0; i < depth; i++) {
-      spaces += " ";
+      spaces += SPACE_INC;
     }
     if (node == null) {
       result = spaces + "null";
     } else {
       result = spaces + "(" + node.item + "\n"
-              + spaces + " " + prepareString(node.leftChild, depth + 1) + "\n"
-              + spaces + " " + prepareString(node.rightChild, depth + 1) + "\n"
+              + spaces + SPACE_INC + prepareString(node.leftChild, depth + 1) + "\n"
+              + spaces + SPACE_INC + prepareString(node.rightChild, depth + 1) + "\n"
               + spaces + spaces + ")";
     }
     return result;
