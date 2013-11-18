@@ -74,6 +74,72 @@ public class Tester {
     }
   }
 
+  private String getFirstName(Scanner kb) {
+    System.out.print("Type first name: ");
+    String firstName = kb.nextLine();
+
+    while (firstName.equals("")) {
+      System.out.print("First name cannot be empty. Try again: ");
+      firstName = kb.nextLine();
+    }
+
+    return firstName;
+  }
+
+  private String getLastName(Scanner kb) {
+    System.out.print("Type last name: ");
+    String lastName = kb.nextLine();
+
+    while (lastName.equals("")) {
+      System.out.print("Last name cannot be empty. Try again: ");
+      lastName = kb.nextLine();
+    }
+
+    return lastName;
+  }
+
+  private double getDonated(Scanner kb, String msg) {
+    System.out.print(msg);
+    double donated = 0;
+    boolean done = false;
+    while (!done) {
+      try {
+        donated = Double.parseDouble(kb.nextLine());
+        done = true;
+      } catch (Exception e) {
+        System.out.print("Wrong input data. Try again: ");
+      }
+    }
+    return donated;
+  }
+
+  private int getYear(Scanner kb) {
+    System.out.print("Type year joined: ");
+    int year = 0;
+    boolean done = false;
+    while (!done) {
+      try {
+        year = Integer.parseInt(kb.nextLine());
+        done = true;
+      } catch (Exception e) {
+        System.out.print("Wrong input data. Try again: ");
+      }
+    }
+    return year;
+  }
+
+  private String getQuery(Scanner kb) {
+    System.out.print("Type query: ");
+    String query = kb.nextLine();
+
+    while (query.equals("")) {
+      System.out.print("Query cannot be empty. Try again: ");
+      query = kb.nextLine();
+    }
+
+    return query;
+  }
+
   public void showHelp() {
     System.out.println("A: ADD a new Member;\n" + "D: DELETE a Member;\n"
             + "F: FIND a Member;\n" + "H: HELP;\n" + "P: Probing efficiency;\n"
@@ -82,19 +148,13 @@ public class Tester {
   }
 
   public void add(Scanner kb) {
-    System.out.print("Type first name: ");
-    String firstName = kb.nextLine();
-    System.out.print("Type last name: ");
-    String lastName = kb.nextLine();
+    String firstName = getFirstName(kb);
+    String lastName = getLastName(kb);
 
     Member member = list.find(Member.createKey(lastName, firstName));
     if (member == null) {
-
-      System.out.print("Type amount donated: ");
-      double donated = Double.parseDouble(kb.nextLine());
-      System.out.print("Type membership year: ");
-      int membershipYear = Integer.parseInt(kb.nextLine());
-
+      double donated = getDonated(kb, "Type amount donated: ");
+      int membershipYear = getYear(kb);
       list.add(new Member(firstName, lastName, donated, membershipYear));
       System.out.println("New member successfully added.");
     } else {
@@ -103,10 +163,8 @@ public class Tester {
   }
 
   public void delete(Scanner kb) {
-    System.out.print("Type first name: ");
-    String firstName = kb.nextLine();
-    System.out.print("Type last name: ");
-    String lastName = kb.nextLine();
+    String firstName = getFirstName(kb);
+    String lastName = getLastName(kb);
 
     boolean result = list.delete(Member.createKey(lastName, firstName));
     if (result) {
@@ -117,10 +175,8 @@ public class Tester {
   }
 
   public void find(Scanner kb) {
-    System.out.print("Type first name: ");
-    String firstName = kb.nextLine();
-    System.out.print("Type last name: ");
-    String lastName = kb.nextLine();
+    String firstName = getFirstName(kb);
+    String lastName = getLastName(kb);
 
     Member found = list.find(Member.createKey(lastName, firstName));
     if (found != null) {
@@ -131,8 +187,7 @@ public class Tester {
   }
 
   public void sponsorhip(Scanner kb) {
-    System.out.print("Type query: ");
-    String input = kb.nextLine();
+    String input = getQuery(kb);
     Iterator<Member> iterator = list.getInOrderIterator();
 
     int year = 0, count = 0;
@@ -158,16 +213,12 @@ public class Tester {
   }
 
   public void update(Scanner kb) {
-    System.out.print("Type first name: ");
-    String firstName = kb.nextLine();
-    System.out.print("Type last name: ");
-    String lastName = kb.nextLine();
+    String firstName = getFirstName(kb);
+    String lastName = getLastName(kb);
 
     Member updateMember = list.find(Member.createKey(lastName, firstName));
     if (updateMember != null) {
-      System.out.print("Type updated donated amount: ");
-      double donated = Double.parseDouble(kb.nextLine());
-
+      double donated = getDonated(kb, "Type updated donated amount: ");
       list.update(updateMember, donated);
     } else {
       System.out.println("Member is not found. Cancelling update...");
