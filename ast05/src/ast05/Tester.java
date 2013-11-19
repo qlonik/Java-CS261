@@ -2,7 +2,6 @@ package ast05;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -76,11 +75,11 @@ public class Tester {
 
   private String getFirstName(Scanner kb) {
     System.out.print("Type first name: ");
-    String firstName = kb.nextLine();
+    String firstName = kb.nextLine().trim();
 
     while (firstName.equals("")) {
       System.out.print("First name cannot be empty. Try again: ");
-      firstName = kb.nextLine();
+      firstName = kb.nextLine().trim();
     }
 
     return firstName;
@@ -88,11 +87,11 @@ public class Tester {
 
   private String getLastName(Scanner kb) {
     System.out.print("Type last name: ");
-    String lastName = kb.nextLine();
+    String lastName = kb.nextLine().trim();
 
     while (lastName.equals("")) {
       System.out.print("Last name cannot be empty. Try again: ");
-      lastName = kb.nextLine();
+      lastName = kb.nextLine().trim();
     }
 
     return lastName;
@@ -104,7 +103,7 @@ public class Tester {
     boolean done = false;
     while (!done) {
       try {
-        donated = Double.parseDouble(kb.nextLine());
+        donated = Double.parseDouble(kb.nextLine().trim());
         done = true;
       } catch (Exception e) {
         System.out.print("Wrong input data. Try again: ");
@@ -119,7 +118,7 @@ public class Tester {
     boolean done = false;
     while (!done) {
       try {
-        year = Integer.parseInt(kb.nextLine());
+        year = Integer.parseInt(kb.nextLine().trim());
         done = true;
       } catch (Exception e) {
         System.out.print("Wrong input data. Try again: ");
@@ -130,11 +129,11 @@ public class Tester {
 
   private String getQuery(Scanner kb) {
     System.out.print("Type query: ");
-    String query = kb.nextLine();
+    String query = kb.nextLine().trim();
 
     while (query.equals("")) {
       System.out.print("Query cannot be empty. Try again: ");
-      query = kb.nextLine();
+      query = kb.nextLine().trim();
     }
 
     return query;
