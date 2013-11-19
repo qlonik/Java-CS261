@@ -6,9 +6,12 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
 
-/**
- *
- * @author qlonik
+/*
+ * Tester.java    Nikita Volodin 127196
+ * CS261,   ast05
+ * 
+ * Member manipulator. This program can add new members, delete members, update
+ * members, print relevant information about members
  */
 public class Tester {
 
@@ -73,6 +76,12 @@ public class Tester {
     }
   }
 
+  /**
+   * Method asks user to input First Name of new member
+   *
+   * @param kb Scanner that is used to read user input
+   * @return First Name of person
+   */
   private String getFirstName(Scanner kb) {
     System.out.print("Type first name: ");
     String firstName = kb.nextLine().trim();
@@ -85,6 +94,12 @@ public class Tester {
     return firstName;
   }
 
+  /**
+   * Method asks user to input Last Name of new member
+   *
+   * @param kb Scanner that is used to read user input
+   * @return Last Name of person
+   */
   private String getLastName(Scanner kb) {
     System.out.print("Type last name: ");
     String lastName = kb.nextLine().trim();
@@ -97,6 +112,12 @@ public class Tester {
     return lastName;
   }
 
+  /**
+   * Method asks user to input amount member have donated
+   *
+   * @param kb Scanner that is used to read user input
+   * @return donated amount
+   */
   private double getDonated(Scanner kb, String msg) {
     System.out.print(msg);
     double donated = 0;
@@ -112,6 +133,12 @@ public class Tester {
     return donated;
   }
 
+  /**
+   * Method asks user to input membership year
+   *
+   * @param kb Scanner that is used to read user input
+   * @return membership year
+   */
   private int getYear(Scanner kb) {
     System.out.print("Type year joined: ");
     int year = 0;
@@ -127,6 +154,12 @@ public class Tester {
     return year;
   }
 
+  /**
+   * Method asks user to input search query
+   *
+   * @param kb Scanner that is used to read user input
+   * @return search query
+   */
   private String getQuery(Scanner kb) {
     System.out.print("Type query: ");
     String query = kb.nextLine().trim();
@@ -139,6 +172,9 @@ public class Tester {
     return query;
   }
 
+  /**
+   * Method shows help
+   */
   public void showHelp() {
     System.out.println("A: ADD a new Member;\n" + "D: DELETE a Member;\n"
             + "F: FIND a Member;\n" + "H: HELP;\n" + "P: Probing efficiency;\n"
@@ -146,6 +182,11 @@ public class Tester {
             + "U: UPDATE a Member;\n" + "Q: QUIT;");
   }
 
+  /**
+   * Method creates new user
+   *
+   * @param kb Scanner that is used to read user input
+   */
   public void add(Scanner kb) {
     String firstName = getFirstName(kb);
     String lastName = getLastName(kb);
@@ -161,6 +202,11 @@ public class Tester {
     }
   }
 
+  /**
+   * Method deletes specified user
+   *
+   * @param kb Scanner that is used to read user input
+   */
   public void delete(Scanner kb) {
     String firstName = getFirstName(kb);
     String lastName = getLastName(kb);
@@ -173,6 +219,11 @@ public class Tester {
     }
   }
 
+  /**
+   * Method searches for specified member
+   *
+   * @param kb Scanner that is used to read user input
+   */
   public void find(Scanner kb) {
     String firstName = getFirstName(kb);
     String lastName = getLastName(kb);
@@ -185,6 +236,12 @@ public class Tester {
     }
   }
 
+  /**
+   * Method shows all people who matches search query by year or by sponsorship
+   * status
+   *
+   * @param kb Scanner that is used to read user input
+   */
   public void sponsorhip(Scanner kb) {
     String input = getQuery(kb);
     Iterator<Member> iterator = list.getInOrderIterator();
@@ -211,6 +268,11 @@ public class Tester {
             + (count == 1 ? " person" : " people"));
   }
 
+  /**
+   * Method updates donated amount of member
+   *
+   * @param kb Scanner that is used to read user input
+   */
   public void update(Scanner kb) {
     String firstName = getFirstName(kb);
     String lastName = getLastName(kb);
@@ -224,6 +286,9 @@ public class Tester {
     }
   }
 
+  /**
+   * Method shows tree height
+   */
   public void probe() {
     System.out.println("The height of the tree is: " + list.getHeight());
   }
@@ -231,7 +296,6 @@ public class Tester {
   /**
    * Display corresponding member information (alphabetical order) the number of
    * members listed and total monies donated.
-   *
    */
   public void report() {
     Iterator<Member> iterator = list.getInOrderIterator();
