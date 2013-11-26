@@ -6,11 +6,11 @@ package hashTable;
 //  	Represents a node in a linked structure.
 //		Chained node has two fields: key + value
 //***********************************************************************
-class ChainNode<K, V> {
+public class ChainNode<K, V> {
 
   private K key;
   private V value;
-  ChainNode<K, V> next;
+  public ChainNode<K, V> next;
 
   //  Creates a node storing the key and its asspcaiated value
   //----------------------------------------------------------------
