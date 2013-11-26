@@ -6,8 +6,7 @@
 
 import hashTable.KeyedItem;
 
-public class ItemForRent extends KeyedItem<Integer>
-        implements RandomStuffThatObjectMustDo {
+public class ItemForRent extends KeyedItem<Integer> {
 
   private String itemName = "**hidden**";
   private double hourlyRate = 0.0;
@@ -65,11 +64,13 @@ public class ItemForRent extends KeyedItem<Integer>
   //-----------------------------------------------------------------
   @Override
   public int hashCode() {
+    return getKey();
     // write code
   }
 
   @Override
   public boolean equals(Object other) {
+    return getKey() == ((ItemForRent) other).getKey();
     // write code
   }
 
@@ -77,9 +78,9 @@ public class ItemForRent extends KeyedItem<Integer>
   @Override
   public String toString() {
     // write code
+    return "ID: " + getKey();
   }
-
-  @Override
-  public boolean delete() {
-  }
+//  @Override
+//  public boolean delete() {
+//  }
 }	// ItemForRent class
