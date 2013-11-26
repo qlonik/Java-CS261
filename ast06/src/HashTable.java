@@ -1,6 +1,6 @@
 //*************************************************************************
 //  HashTable.java                			Authors: Prichard & Carrano
-//										Implemented By:
+//							Implemented By:
 //
 // Assumption:
 //	A table contains at most one item with a given search key at any time.
@@ -12,79 +12,62 @@
 //*************************************************************************
 
 // package hashTable;
+public class HashTable<KT, V> implements HashTableADT<KT, V> {
 
-public class HashTable<KT, V>  implements HashTableADT<KT, V>
-{
-  	public /* final */ int HASH_TABLE_SIZE = 101;
+  public /* final */ int HASH_TABLE_SIZE = 101;
+  private ChainNode[] table;     // hash table
+  private int size = 0;          // size of ADT table
 
-  	private ChainNode[] table;     // hash table
-  	private int size = 0;          // size of ADT table
+  public HashTable() {
+    table = new ChainNode[HASH_TABLE_SIZE];
+  }  // end default constructor
 
+  //  Creates an empty hash table using the specified capacity
+  //-----------------------------------------------------------------
+  public HashTable(int capacity) {
+    table = new ChainNode[capacity];  // note delete <KT, V>
 
-  	public HashTable()
-  	{
-    	table = new ChainNode[HASH_TABLE_SIZE];
-  	}  // end default constructor
+    for (int i = 0; i < capacity; i++) {
+      table[i] = null;
+    }
+  } // constructor
 
-   	//  Creates an empty hash table using the specified capacity
-	//-----------------------------------------------------------------
-   public HashTable (int capacity)
-   {
-	   	table = new ChainNode[capacity];  // note delete <KT, V>
+  // table operations
+  public boolean tableIsEmpty() {
+    return size == 0;
+  }  // end tableIsEmpty
 
-		for (int i=0; i<capacity; i++)
-			table[i] = null;
-   } // constructor
-
-
-	// table operations
-
-  	public boolean tableIsEmpty() {
-    	return size==0;
-  	}  // end tableIsEmpty
-
-  	public int tableLength() {
-    	return size;
-  	}  // end tableLength
-
+  public int tableLength() {
+    return size;
+  }  // end tableLength
 
 // Implement the following methods.
-
-  	public void tableInsert(KT key, V value)
-                          throws HashException
-    {
+  public void tableInsert(KT key, V value)
+          throws HashException {
     // ...
-  	}  // end tableInsert
+  }  // end tableInsert
 
-
-  	public boolean tableDelete(KT searchKey)
-  	{
+  public boolean tableDelete(KT searchKey) {
 
     // ...
     return true;  // added for compilation
- 	}  // end tableDelete
+  }  // end tableDelete
 
-
-	public V tableRetrieve(KT searchKey)
-	{
+  public V tableRetrieve(KT searchKey) {
     // ...
     return null;  // added for compilation
-  	} // end tableRetrieve
+  } // end tableRetrieve
 
-  	//------------------------------------------------------------------
-   	//  	Returns true if this hash table contains the specified element.
-   	//------------------------------------------------------------------
-   public boolean contains (KT key)
-   {
-   		//	...
-      return false;	// added for compilation
-   }
+  //------------------------------------------------------------------
+  //  	Returns true if this hash table contains the specified element.
+  //------------------------------------------------------------------
+  public boolean contains(KT key) {
+    //	...
+    return false;	// added for compilation
+  }
 
-
-	public int hashIndex(KT key)
-	{
+  public int hashIndex(KT key) {
     // ...
     return key.hashCode();
-  	}  // end hashIndex
-
+  }  // end hashIndex
 }  // end HashTable

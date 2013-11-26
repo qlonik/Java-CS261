@@ -1,5 +1,5 @@
 //***********************************************************************
-//  KeyedItem.java                			Authors: Prichard & Carrano
+//  KeyedItem.java                	Authors: Prichard & Carrano
 //
 //
 //  Represents an Item with a "key" field
@@ -7,17 +7,15 @@
 //***********************************************************************
 
 // package hashTable;
+public abstract class KeyedItem<KT extends Comparable<? super KT>> {
 
-public abstract class KeyedItem<KT extends Comparable<? super KT>>
-{
-  	private KT searchKey;
+  private KT searchKey;
 
-  	public KeyedItem(KT key) {
-    	 searchKey = key;
-  	}  // end constructor
+  public KeyedItem(KT key) {
+    searchKey = key;
+  }  // end constructor
 
-  	public KT getKey() {
-    	return searchKey;
-  	} // end getKey
-
+  public KT getKey() {
+    return searchKey;
+  } // end getKey
 } // end KeyedItem
