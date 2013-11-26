@@ -11,6 +11,8 @@ import hashTable.ChainNode;
 public class ChainedHashTable<KT, V> extends HashTable<KT, V>
         implements HashTableADT<KT, V> {
 
+  private int counter;
+
   public ChainedHashTable() {
   }
 
@@ -29,14 +31,22 @@ public class ChainedHashTable<KT, V> extends HashTable<KT, V>
 
   @Override
   public V tableRetrieve(KT searchKey) {
+    counter = 0;
     int hash = hashIndex(searchKey);
     ChainNode<KT, V> node = table[hash];
     while (node != null) {
       if (node.getKey().equals(searchKey)) {
+        counter++;
         return node.getValue();
       }
+      counter++;
       node = node.next;
     }
+    counter++;
     return null;
+  }
+
+  public int getCounter() {
+    return counter;
   }
 }

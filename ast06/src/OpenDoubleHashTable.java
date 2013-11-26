@@ -15,6 +15,8 @@ public class OpenDoubleHashTable<
         extends OpenHashTable<KT, T>
         implements hashTable.HashTableADT<KT, T> {
 
+  private int counter;
+
   public OpenDoubleHashTable() {
   }
 
@@ -45,25 +47,30 @@ public class OpenDoubleHashTable<
 
   @Override
   public T tableRetrieve(KT searchKey) {
+    counter = 0;
     int hash = hashIndex(searchKey);
     if (table[hash].getKey().equals(searchKey)) {
+      counter++;
       return table[hash];
     } else {
+      counter++;
       int doubleHash = 19 - (searchKey.hashCode() % 19);
       hash += doubleHash;
       while (hash >= size) {
         hash -= size;
       }
       while (table[hash] != null && !table[hash].getKey().equals(searchKey)) {
+        counter++;
         hash += doubleHash;
         while (hash >= size) {
           hash -= size;
         }
       }
+      counter++;
       return table[hash];
     }
   }
-  
+
   public void printToFile() {
     try {
       FileWriter fw = new FileWriter(new File("Double_table_output.txt"));
@@ -73,5 +80,9 @@ public class OpenDoubleHashTable<
       fw.close();
     } catch (IOException exception) {
     }
+  }
+
+  public int getCounter() {
+    return counter;
   }
 }

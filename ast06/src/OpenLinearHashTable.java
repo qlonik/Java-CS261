@@ -15,6 +15,8 @@ public class OpenLinearHashTable<
         extends OpenHashTable<KT, T>
         implements hashTable.HashTableADT<KT, T> {
 
+  private int counter;
+
   public OpenLinearHashTable() {
   }
 
@@ -38,17 +40,20 @@ public class OpenLinearHashTable<
   @Override
   public T tableRetrieve(KT searchKey) {
 //    return super.tableRetrieve(searchKey);
+    counter = 0;
     int hash = hashIndex(searchKey);
     if (table[hash] == null) {
+      counter++;
       return null;
     }
-    int hashOrig = hash;
     while (table[hash] != null && !table[hash].getKey().equals(searchKey)) {
+      counter++;
       hash += 1;
       while (hash >= size) {
         hash -= size;
       }
     }
+    counter++;
     return table[hash];
   }
 
@@ -61,5 +66,9 @@ public class OpenLinearHashTable<
       fw.close();
     } catch (IOException exception) {
     }
+  }
+
+  public int getCounter() {
+    return counter;
   }
 }

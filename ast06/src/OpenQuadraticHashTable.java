@@ -15,6 +15,8 @@ public class OpenQuadraticHashTable<
         extends OpenHashTable<KT, T>
         implements hashTable.HashTableADT<KT, T> {
 
+  private int counter;
+
   public OpenQuadraticHashTable() {
   }
 
@@ -48,22 +50,27 @@ public class OpenQuadraticHashTable<
 
   @Override
   public T tableRetrieve(KT searchKey) {
+    counter = 0;
     int hash = hashIndex(searchKey);
     if (table[hash].getKey().equals(searchKey)) {
+      counter++;
       return table[hash];
     } else {
+      counter++;
       int i = 1;
       hash += 2 * i - 1;
       while (hash >= size) {
         hash -= size;
       }
       while (table[hash] != null && !table[hash].getKey().equals(searchKey)) {
+        counter++;
         i++;
         hash += 2 * i - 1;
         while (hash >= size) {
           hash -= size;
         }
       }
+      counter++;
       return table[hash];
     }
   }
@@ -77,5 +84,9 @@ public class OpenQuadraticHashTable<
       fw.close();
     } catch (IOException exception) {
     }
+  }
+
+  public int getCounter() {
+    return counter;
   }
 }
