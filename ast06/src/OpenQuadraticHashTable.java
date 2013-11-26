@@ -10,51 +10,67 @@ import java.io.IOException;
  *
  * @author qlonik
  */
-public class OpenLinearHashTable<
+public class OpenQuadraticHashTable<
               KT extends Comparable<? super KT>, T extends KeyedItem<KT>>
         extends OpenHashTable<KT, T>
         implements hashTable.HashTableADT<KT, T> {
 
-  public OpenLinearHashTable() {
+  public OpenQuadraticHashTable() {
   }
 
-  public OpenLinearHashTable(int capacity) {
+  public OpenQuadraticHashTable(int capacity) {
     super(capacity);
   }
 
   @Override
   public void tableInsert(KT key, T value) throws HashException {
-//    super.tableInsert(key, value);
     int hash = hashIndex(key);
-    while (table[hash] != null) {
-      hash += 1;
+    if (table[hash] == null) {
+      table[hash] = value;
+    } else {
+      int i = 1;
+      hash += 2 * i - 1;
       while (hash >= size) {
         hash -= size;
       }
+      while (table[hash] != null) {
+        i++;
+        hash += 2 * i - 1;
+        while (hash >= size) {
+          hash -= size;
+        }
+      }
+      table[hash] = value;
+
+//        System.out.println(table[hash]);
     }
-    table[hash] = value;
   }
 
   @Override
   public T tableRetrieve(KT searchKey) {
-//    return super.tableRetrieve(searchKey);
     int hash = hashIndex(searchKey);
-    if (table[hash] == null) {
-      return null;
-    }
-    int hashOrig = hash;
-    while (table[hash] != null && !table[hash].getKey().equals(searchKey)) {
-      hash += 1;
+    if (table[hash].getKey().equals(searchKey)) {
+      return table[hash];
+    } else {
+      int i = 1;
+      hash += 2 * i - 1;
       while (hash >= size) {
         hash -= size;
       }
+      while (table[hash] != null && !table[hash].getKey().equals(searchKey)) {
+        i++;
+        hash += 2 * i - 1;
+        while (hash >= size) {
+          hash -= size;
+        }
+      }
+      return table[hash];
     }
-    return table[hash];
   }
 
   public void printToFile() {
     try {
-      FileWriter fw = new FileWriter(new File("Linear_table_output.txt"));
+      FileWriter fw = new FileWriter(new File("Quadratic_table_output.txt"));
       for (int i = 0; i < size; i++) {
         fw.write("" + table[i] + "\n");
       }
