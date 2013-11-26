@@ -76,6 +76,22 @@ public class Testing {
     System.out.println(qt.tableRetrieve(218818));
     System.out.println(qt.tableRetrieve(445299));
     System.out.println("");
+
+    loadFactor = 0.75;
+    capacity = (int) Math.ceil(size / loadFactor);
+    while (!isPrime(capacity)) {
+      capacity++;
+    }
+    ChainedHashTable<Integer, ItemForRent> ct = new ChainedHashTable<>(capacity);
+    for (int i = 0; i < size; i++) {
+      ItemForRent item = testDataOrig[i];
+      ct.tableInsert(item.getKey(), item);
+    }
+//    qt.printToFile();
+    System.out.println("retrieve quadratic");
+    System.out.println(ct.tableRetrieve(218818));
+    System.out.println(ct.tableRetrieve(445299));
+    System.out.println("");
   }
 
   public static int readDataFile(ItemForRent[] testData, String filepath) throws Exception {
