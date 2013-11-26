@@ -14,18 +14,17 @@ package hashTable;
 //*************************************************************************
 public class HashTable<KT, V> implements HashTableADT<KT, V> {
 
-  public /* final */ int HASH_TABLE_SIZE = 101;
-  private ChainNode[] table;     // hash table
-  private int size = 0;          // size of ADT table
+  protected ChainNode<KT, V>[] table;     // hash table
+  protected int size = 0;          // size of ADT table
 
   public HashTable() {
-    table = new ChainNode[HASH_TABLE_SIZE];
   }  // end default constructor
 
   //  Creates an empty hash table using the specified capacity
   //-----------------------------------------------------------------
   public HashTable(int capacity) {
     table = new ChainNode[capacity];  // note delete <KT, V>
+    size = capacity;
 
     for (int i = 0; i < capacity; i++) {
       table[i] = null;
@@ -33,41 +32,43 @@ public class HashTable<KT, V> implements HashTableADT<KT, V> {
   } // constructor
 
   // table operations
+  @Override
   public boolean tableIsEmpty() {
     return size == 0;
   }  // end tableIsEmpty
 
+  @Override
   public int tableLength() {
     return size;
   }  // end tableLength
 
 // Implement the following methods.
-  public void tableInsert(KT key, V value)
-          throws HashException {
-    // ...
+  @Override
+  public void tableInsert(KT key, V value) throws HashException {
+    throw new UnsupportedOperationException("Not supported yet.");
   }  // end tableInsert
 
+  @Override
   public boolean tableDelete(KT searchKey) {
-
-    // ...
-    return true;  // added for compilation
+    throw new UnsupportedOperationException("Not supported yet.");
   }  // end tableDelete
 
+  @Override
   public V tableRetrieve(KT searchKey) {
-    // ...
-    return null;  // added for compilation
+    throw new UnsupportedOperationException("Not supported yet.");
   } // end tableRetrieve
 
   //------------------------------------------------------------------
   //  	Returns true if this hash table contains the specified element.
   //------------------------------------------------------------------
+  @Override
   public boolean contains(KT key) {
-    //	...
-    return false;	// added for compilation
+    V item = tableRetrieve(key);
+    return item != null;
   }
 
+  @Override
   public int hashIndex(KT key) {
-    // ...
-    return key.hashCode();
+    return key.hashCode() % size;
   }  // end hashIndex
 }  // end HashTable
