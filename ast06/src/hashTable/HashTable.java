@@ -1,3 +1,5 @@
+package hashTable;
+
 //*************************************************************************
 //  HashTable.java                			Authors: Prichard & Carrano
 //							Implemented By:
@@ -10,8 +12,6 @@
 //	 Exercise X asks you to rewrite this implementation using ArrayList
 //	 to avoid this warning.
 //*************************************************************************
-
-// package hashTable;
 public class HashTable<KT, V> implements HashTableADT<KT, V> {
 
   public /* final */ int HASH_TABLE_SIZE = 101;

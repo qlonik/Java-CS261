@@ -1,10 +1,11 @@
+package hashTable;
+
 //***********************************************************************
 //  ChainNode.java                	Authors: Prichard & Carrano
 //
 //  	Represents a node in a linked structure.
 //		Chained node has two fields: key + value
 //***********************************************************************
-
 class ChainNode<K, V> {
 
   private K key;

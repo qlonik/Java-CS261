@@ -1,10 +1,10 @@
+package hashTable;
+
 //**********************************************************************
 //  HashException.java     			Author: Wayne Cutcliffe
 //
 //
 //**********************************************************************
-
-// package hashTable;
 public class HashException extends RuntimeException {
   //-----------------------------------------------------
   //   Creates the exception with the specified message.

@@ -1,3 +1,5 @@
+package hashTable;
+
 //***********************************************************************
 //  KeyedItem.java                	Authors: Prichard & Carrano
 //
@@ -5,8 +7,6 @@
 //  Represents an Item with a "key" field
 //	The key is used when searching for an item in a collection
 //***********************************************************************
-
-// package hashTable;
 public abstract class KeyedItem<KT extends Comparable<? super KT>> {
 
   private KT searchKey;
