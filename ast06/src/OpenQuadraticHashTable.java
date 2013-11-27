@@ -50,6 +50,10 @@ public class OpenQuadraticHashTable<
   public T tableRetrieve(KT searchKey) {
     counter = 0;
     int hash = hashIndex(searchKey);
+    if (table[hash] == null) {
+      counter++;
+      return null;
+    }
     if (table[hash].getKey().equals(searchKey)) {
       counter++;
       return table[hash];
