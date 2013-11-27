@@ -15,8 +15,6 @@ public class OpenQuadraticHashTable<
         extends OpenHashTable<KT, T>
         implements hashTable.HashTableADT<KT, T> {
 
-  private int counter;
-
   public OpenQuadraticHashTable() {
   }
 
@@ -84,9 +82,5 @@ public class OpenQuadraticHashTable<
       fw.close();
     } catch (IOException exception) {
     }
-  }
-
-  public int getCounter() {
-    return counter;
   }
 }

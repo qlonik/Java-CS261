@@ -16,6 +16,7 @@ public class HashTable<KT, V> implements HashTableADT<KT, V> {
 
   protected ChainNode<KT, V>[] table;     // hash table
   protected int size = 0;          // size of ADT table
+  protected int counter = 0;       // number of probes to get item
 
   public HashTable() {
   }  // end default constructor
@@ -71,4 +72,9 @@ public class HashTable<KT, V> implements HashTableADT<KT, V> {
   public int hashIndex(KT key) {
     return key.hashCode() % size;
   }  // end hashIndex
+
+  @Override
+  public int getCounter() {
+    return counter;
+  }
 }  // end HashTable

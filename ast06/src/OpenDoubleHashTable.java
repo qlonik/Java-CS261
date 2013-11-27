@@ -15,8 +15,6 @@ public class OpenDoubleHashTable<
         extends OpenHashTable<KT, T>
         implements hashTable.HashTableADT<KT, T> {
 
-  private int counter;
-
   public OpenDoubleHashTable() {
   }
 
@@ -80,9 +78,5 @@ public class OpenDoubleHashTable<
       fw.close();
     } catch (IOException exception) {
     }
-  }
-
-  public int getCounter() {
-    return counter;
   }
 }

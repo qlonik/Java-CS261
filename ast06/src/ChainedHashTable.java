@@ -11,8 +11,6 @@ import hashTable.ChainNode;
 public class ChainedHashTable<KT, V> extends HashTable<KT, V>
         implements HashTableADT<KT, V> {
 
-  private int counter;
-
   public ChainedHashTable() {
   }
 
@@ -44,9 +42,5 @@ public class ChainedHashTable<KT, V> extends HashTable<KT, V>
     }
     counter++;
     return null;
-  }
-
-  public int getCounter() {
-    return counter;
   }
 }

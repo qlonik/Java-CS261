@@ -2,6 +2,7 @@
 import hashTable.HashException;
 import hashTable.KeyedItem;
 import hashTable.OpenHashTable;
+import hashTable.HashTableADT;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,9 +14,7 @@ import java.io.IOException;
 public class OpenLinearHashTable<
               KT extends Comparable<? super KT>, T extends KeyedItem<KT>>
         extends OpenHashTable<KT, T>
-        implements hashTable.HashTableADT<KT, T> {
-
-  private int counter;
+        implements HashTableADT<KT, T> {
 
   public OpenLinearHashTable() {
   }
@@ -66,9 +65,5 @@ public class OpenLinearHashTable<
       fw.close();
     } catch (IOException exception) {
     }
-  }
-
-  public int getCounter() {
-    return counter;
   }
 }
