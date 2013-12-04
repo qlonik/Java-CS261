@@ -1,0 +1,101 @@
+Number of items in Equipment: 7000
+Number of items to verify: 1015
+*****************************************************
+class OpenLinearHashTable with load factor 0.75
+Amount of successful searches: 877
+Average number of probes among successful searches: 2.33
+Maximum number of probes among successful searches: 36
+
+Amount of unsuccessful searches: 138
+Average number of probes among unsuccessful searches: 7.89
+Maximum number of probes among unsuccessful searches: 52
+*****************************************************
+
+*****************************************************
+class OpenLinearHashTable with load factor 0.9
+Amount of successful searches: 877
+Average number of probes among successful searches: 3.99
+Maximum number of probes among successful searches: 110
+
+Amount of unsuccessful searches: 138
+Average number of probes among unsuccessful searches: 32.30
+Maximum number of probes among unsuccessful searches: 238
+*****************************************************
+
+*****************************************************
+class OpenDoubleHashTable with load factor 0.75
+Amount of successful searches: 877
+Average number of probes among successful searches: 1.86
+Maximum number of probes among successful searches: 18
+
+Amount of unsuccessful searches: 138
+Average number of probes among unsuccessful searches: 3.80
+Maximum number of probes among unsuccessful searches: 17
+*****************************************************
+
+*****************************************************
+class OpenDoubleHashTable with load factor 0.9
+Amount of successful searches: 877
+Average number of probes among successful searches: 2.65
+Maximum number of probes among successful searches: 36
+
+Amount of unsuccessful searches: 138
+Average number of probes among unsuccessful searches: 10.43
+Maximum number of probes among unsuccessful searches: 61
+*****************************************************
+
+*****************************************************
+class OpenQuadraticHashTable with load factor 0.75
+Amount of successful searches: 877
+Average number of probes among successful searches: 1.92
+Maximum number of probes among successful searches: 20
+
+Amount of unsuccessful searches: 138
+Average number of probes among unsuccessful searches: 4.41
+Maximum number of probes among unsuccessful searches: 25
+*****************************************************
+
+*****************************************************
+class OpenQuadraticHashTable with load factor 0.9
+Amount of successful searches: 877
+Average number of probes among successful searches: 2.61
+Maximum number of probes among successful searches: 50
+
+Amount of unsuccessful searches: 138
+Average number of probes among unsuccessful searches: 10.49
+Maximum number of probes among unsuccessful searches: 56
+*****************************************************
+
+*****************************************************
+class ChainedHashTable with load factor 0.75
+Amount of successful searches: 877
+Average number of probes among successful searches: 1.35
+Maximum number of probes among successful searches: 4
+
+Amount of unsuccessful searches: 138
+Average number of probes among unsuccessful searches: 1.75
+Maximum number of probes among unsuccessful searches: 5
+*****************************************************
+
+*****************************************************
+class ChainedHashTable with load factor 0.9
+Amount of successful searches: 877
+Average number of probes among successful searches: 1.45
+Maximum number of probes among successful searches: 6
+
+Amount of unsuccessful searches: 138
+Average number of probes among unsuccessful searches: 1.84
+Maximum number of probes among unsuccessful searches: 5
+*****************************************************
+
+*****************************************************
+class ChainedHashTable with load factor 0.5
+Amount of successful searches: 877
+Average number of probes among successful searches: 1.22
+Maximum number of probes among successful searches: 5
+
+Amount of unsuccessful searches: 138
+Average number of probes among unsuccessful searches: 1.57
+Maximum number of probes among unsuccessful searches: 5
+*****************************************************
+
